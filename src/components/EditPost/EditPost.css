@@ -1,0 +1,82 @@
+
+
+.edit-post-heading{
+    margin-top: 10%;
+    padding-left: 10vw;
+    font-size: 4vw;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.edit-post-form{
+    width: 85%;
+    padding: 0;
+    height: 75vw;
+    min-height: 280px;
+    max-height: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 10%;
+    position: relative;
+}
+
+
+.right, .left{
+    width: 48%;
+    margin: 0;
+    height: 45vh;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.edit-post-label, .edit-post-input, textarea{
+    font-size: 2vw;
+    position: relative;
+    top: 30px;
+    left: 5%;
+    display: block;
+    width: 50%;
+}
+
+.edit-post-label{
+    width: 100%;
+}
+
+.edit-post-input{
+    margin-bottom: 3%;
+}
+
+ .edit-post-description{
+    height: 25vw;
+    width: 85%;
+ }
+
+ .edit-post-commission{
+    width: 80%;
+}
+
+ .edit-post-terms-and-cond{
+    width: 85%;
+    height: 20vw;
+ }
+
+.img{
+    margin-top: 3%;
+    width: 80%;
+    font-size: 2vw;
+ }
+
+ .edit-post-submit{
+    display: block;
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+    height: 5vw;
+    margin: 1%;
+    width: 40%;
+    font-size: 2vw;
+}
+

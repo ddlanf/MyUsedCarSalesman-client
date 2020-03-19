@@ -1,0 +1,82 @@
+.view-post-box{
+  margin-top: 15%;
+  margin-bottom: 10%;
+  padding-top: 3%;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  border-radius: 5%;
+}
+
+.view-post-image{
+  border: 1px solid black;
+  text-align: center;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  height: 33vw;
+  display: block;
+}
+
+.view-post-image{
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+.view-post-car-name, .view-post-car-price, .view-post-car-commission{
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-top: 3%;
+}
+
+.view-post-car-name{
+  font-size: 6vw;
+}
+
+.view-post-car-price, .view-post-car-commission{
+  font-size: 5vw;
+}
+
+.view-post-info{
+  list-style: none;
+  font-size:  3vw;
+  padding-left: 10%;
+}
+
+.view-post-text-box{
+  border: 0.5px solid black;
+  width: 85%;
+  padding-left: 1%;
+}
+
+.view-post-text-box.description, .view-post-text-box.terms-cond{
+  max-height: 6rem;
+  overflow-y: scroll;
+}
+
+.contact-button{
+  margin-top: 5%;
+  font-size: 2vw;
+}
+
+@media screen and (min-width: 1000px) {
+  .view-post-car-name{
+    margin-top: 0;
+    font-size: 45px;
+  }
+  .view-post-car-price, .view-post-car-commission{
+    font-size: 40px;
+  }  
+
+.view-post-info{
+  list-style: none;
+  font-size:  25px;
+ } 
+}

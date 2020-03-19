@@ -1,0 +1,39 @@
+
+.admin{
+   margin-bottom: 5%;
+}
+
+.admin-info{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightgray;
+}
+ 
+ .admin-info > *{
+    font-size: 2vw;
+ }
+
+ .admin-paragraph{
+   font-size: 1vw;
+ }
+ 
+ .admin-table{
+    overflow-y:scroll;
+    overflow-x:scroll;
+    height: 30vw;
+    display:block;
+    text-align: left;
+    border-collapse: collapse;
+    margin-left: 0.2%;
+ }
+ 
+th{
+   border: 1px solid black;
+ }
+
+.admin-delete, .admin-block{
+   width: 10vw;
+   font-size: 2vw;
+ }
+ 
+ 

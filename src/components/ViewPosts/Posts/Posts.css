@@ -1,0 +1,53 @@
+  .view-posts-post{
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 10%;
+    margin: 1%;
+    margin-top: 6%;
+  }
+  
+  .view-posts-car-image-box{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    height: 35%;
+  }
+
+  .view-posts-car-image{
+    width: 100%;
+  }
+
+  .view-posts-post > ul{
+    list-style: none;
+    padding: 0;
+    margin-left: 10%;
+    font-size: 2vw;
+  }
+  
+  .view-posts-lists > li{
+      width: 90%;
+      font-size: 3vw;
+  }
+
+  .view-posts-post{
+    text-decoration: none;
+    color: black;
+  }
+
+  .post-link{
+    height: auto;
+    width: auto;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .view-posts-post{
+      width: 25%;
+      
+    }
+
+    .view-posts-lists > li{
+      width: 90%;
+      font-size: 30px;
+    }
+  }

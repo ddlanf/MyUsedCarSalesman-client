@@ -1,0 +1,80 @@
+.make-post-heading{
+    margin-top: 10%;
+    padding-left: 10vw;
+    font-size: 4vw;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.make-post-form{
+    width: 85%;
+    padding: 0;
+    height: 75vw;
+    min-height: 280px;
+    max-height: 950px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 10%;
+    position: relative;
+}
+
+
+.make-post-right, .make-post-left{
+    width: 48%;
+    margin: 0;
+    height: 45vh;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+
+.make-post-label, .make-post-input, textarea{
+    font-size: 2vw;
+    position: relative;
+    top: 30px;
+    left: 5%;
+    display: block;
+    width: 50%;
+}
+
+.make-post-label{
+    width: 100%;
+}
+
+.make-post-input{
+    margin-bottom: 3%;
+}
+
+ .make-post-description{
+    height: 25vw;
+    width: 85%;
+ }
+
+ .make-post-commission{
+    width: 80%;
+}
+
+ .make-post-terms-and-cond{
+    width: 85%;
+    height: 20vw;
+ }
+
+.make-post-img{
+    margin-top: 3%;
+    width: 80%;
+    font-size: 2vw;
+ }
+
+ .make-post-submit{
+    display: block;
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+    height: 5vw;
+    margin: 1%;
+    width: 40%;
+    font-size: 2vw;
+}
+

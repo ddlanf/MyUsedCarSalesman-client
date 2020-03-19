@@ -1,0 +1,44 @@
+.heading-box{
+  margin-top: 0;
+  margin-bottom: 5vw;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block;
+}
+
+.header-main{
+  font-size: 6vw;
+  margin: 0;
+}
+
+.sub-text{
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  font-size: 3vw;
+}
+
+.sub-text > p{
+  font-size: 3vw;
+  line-height: normal;
+}
+
+.break{
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 1000px) {
+  
+  .header-main{
+    font-size: 50px;
+  }
+    
+  .sub-text > p{
+    font-size: 30px;
+  }
+}

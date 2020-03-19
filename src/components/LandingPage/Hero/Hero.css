@@ -1,0 +1,22 @@
+.hero{
+    margin-top: 10%;
+    height: 48vw;
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    border: black dotted 1px;
+    background-color: white !important;
+}
+
+.get-started{
+    text-align: center;
+    box-sizing: content-box;
+    margin: 20% auto;
+    width: 20%;
+    height: 3vw;
+    vertical-align: middle;
+    font-size: 2vw;
+    border: 2px solid gray;
+    background-color: gray;
+}
+    

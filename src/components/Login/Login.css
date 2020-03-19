@@ -1,0 +1,76 @@
+.login-box{
+    margin-top: 12%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10vw;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    border: black solid 2px;
+}
+
+.login-box > *{
+    font-size: 5vw;
+}
+
+.login-header-box{
+    text-align: center;
+    position: relative;
+    margin-bottom: 2%;
+}
+
+.login-header{
+    display: inline;
+    font-size: 10vw;
+}
+
+
+.login-label, .login-input{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+.login-input{
+    margin-bottom: 5%;
+    margin-top: 0;
+    height: 5vw;
+    max-height: 55px;
+    width: 70%;
+    font-size: 2.5vw;
+}
+
+.login-label{
+    margin-bottom: 2%;
+    font-size: 5vw;
+}
+  
+.login-submit{
+    margin: 2% auto;
+    width: 35%;
+    height: 8vw;
+    max-height: 55px;
+    vertical-align: middle;
+    font-size: 3vw;
+}
+
+.login-link{
+    color: black;
+    text-decoration: none;
+}
+  
+@media screen and (min-width: 1000px) {
+  
+      .login-box > *{
+        font-size: 30px;
+      }
+  
+      .login-header{
+        font-size: 55px;
+      }
+
+      .login-label, .login-input{
+        font-size: 30px;
+      }
+}

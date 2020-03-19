@@ -1,0 +1,77 @@
+.register-box{
+    margin-top: 12%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10vw;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    border: black solid 2px;
+}
+
+.register-box > *{
+    font-size: 5vw;
+}
+
+.register-header-box{
+    text-align: center;
+    position: relative;
+}
+
+.register-header{
+    display: inline;
+    font-size: 10vw;
+}
+
+.register-form{
+    margin-top: 5%;
+}
+
+.register-label, .register-input{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+}
+
+.register-label{
+    font-size: 2vw;
+}
+
+.register-input{
+    margin-bottom: 5%;
+    margin-top: 0;
+    height: 5vw;
+    max-height: 40px;
+    width: 70%;
+    font-size: 4.5vw;
+}
+
+.register-label{
+    margin-bottom: 2%;
+    font-size: 5vw;
+}
+  
+.register-submit{
+    margin: 8% auto;
+    width: 35%;
+    height: 8vw;
+    max-height: 55px;
+    vertical-align: middle;
+    font-size: 3vw;
+}
+  
+@media screen and (min-width: 1000px) {
+  
+      .register-box > *{
+        font-size: 30px;
+      }
+  
+      .register-header{
+        font-size: 55px;
+      }
+
+      .register-label, .register-input{
+        font-size: 30px;
+      }
+}
