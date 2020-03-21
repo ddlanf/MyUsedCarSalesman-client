@@ -1,5 +1,5 @@
 .make-post-heading{
-    margin-top: 10%;
+    margin-top: 11%;
     padding-left: 10vw;
     font-size: 4vw;
     text-align: left;
@@ -8,6 +8,14 @@
 }
 
 .make-post-form{
+    border: 1px solid white;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.make-post-input-box{
     width: 85%;
     padding: 0;
     height: 75vw;
@@ -22,7 +30,7 @@
 
 
 .make-post-right, .make-post-left{
-    width: 48%;
+    width: 50%;
     margin: 0;
     height: 45vh;
     display: inline-block;
@@ -71,9 +79,8 @@
     display: block;
     position: absolute;
     left: 30%;
-    bottom: 0;
+    bottom: 10%;
     height: 5vw;
-    margin: 1%;
     width: 40%;
     font-size: 2vw;
 }

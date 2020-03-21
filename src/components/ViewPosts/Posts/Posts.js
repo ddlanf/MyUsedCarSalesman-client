@@ -11,10 +11,9 @@ export default class Posts extends Component {
         const posts = userPosts.map(post => {
             return (
                         <Link
-                            className="view-posts-link"
+                            className="view-posts-post"
                             to={`/view-posts/${post.id}`}
                             key={post.id} 
-                            className="view-posts-post"
                             >
                             <div 
                                 className="view-posts-car-image-box">

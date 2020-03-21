@@ -10,14 +10,15 @@ export default class ViewPosts extends Component {
                 <section className="view-posts-post-box">
                     <Posts/>
                 </section>
-                <button className="create-post-button"> 
-                    <Link
+                <Link
                         className="view-posts-link"
                         to="./make-post"
                         >
+                      <button className="create-post-button"> 
                         Create Post
-                    </Link>
-                </button>
+                      </button>
+                </Link>
+              
             </>
         )
     }

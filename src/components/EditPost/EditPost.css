@@ -1,7 +1,5 @@
-
-
 .edit-post-heading{
-    margin-top: 10%;
+    margin-top: 11%;
     padding-left: 10vw;
     font-size: 4vw;
     text-align: left;
@@ -10,6 +8,14 @@
 }
 
 .edit-post-form{
+    border: 1px solid white;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.edit-post-input-box{
     width: 85%;
     padding: 0;
     height: 75vw;
@@ -23,8 +29,8 @@
 }
 
 
-.right, .left{
-    width: 48%;
+.edit-post-right, .edit-post-left{
+    width: 50%;
     margin: 0;
     height: 45vh;
     display: inline-block;
@@ -63,7 +69,7 @@
     height: 20vw;
  }
 
-.img{
+.edit-post-img{
     margin-top: 3%;
     width: 80%;
     font-size: 2vw;
@@ -73,9 +79,8 @@
     display: block;
     position: absolute;
     left: 30%;
-    bottom: 0;
+    bottom: 10%;
     height: 5vw;
-    margin: 1%;
     width: 40%;
     font-size: 2vw;
 }

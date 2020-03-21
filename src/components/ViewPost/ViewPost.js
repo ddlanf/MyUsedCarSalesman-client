@@ -5,17 +5,15 @@ import './ViewPost.css'
 
 class ViewPost extends Component {
 
-    findCarIndex(){
+    findCarIndex(userPosts){
         const { match } = this.props;
-        const { userPosts } = dummyData;
         const clickedPost = userPosts.filter( post => {
             return match.params.postId === post.id
         })
         return clickedPost[0]
     }
 
-    findUser = (car) => {
-        const { userData } = dummyData;
+    findUser = (car, userData) => {
         const user = userData.filter( index => {
             return index.id === car.user_id
         })
@@ -23,9 +21,9 @@ class ViewPost extends Component {
     }
 
     render() {
-
-        const car = this.findCarIndex();
-        const userName = this.findUser(car);
+        const { userPosts, userData } = dummyData;
+        const car = this.findCarIndex(userPosts);
+        const userName = this.findUser(car, userData);
 
         return (
             <>
@@ -99,11 +97,8 @@ class ViewPost extends Component {
                                 {userName}  
                             </div>
                         </li>
-                        <li>
-                            <button className="contact-button">Contact Seller</button>
-                            <button className="contact-button">Take this offer</button>
-                        </li>
                     </ul>
+                    <button className="contact-button">Contact Owner</button>
                 </section>
             </>
         )
