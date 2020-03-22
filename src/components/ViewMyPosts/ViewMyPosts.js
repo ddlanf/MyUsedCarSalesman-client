@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import MyPosts from './MyPosts/MyPosts'
 
 export default class ViewMyPosts extends Component {
+
+
     render() {
         return (
             <>

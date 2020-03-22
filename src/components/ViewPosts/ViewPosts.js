@@ -2,13 +2,32 @@ import React, { Component } from 'react'
 import './ViewPosts.css'
 import { Link } from 'react-router-dom'
 import Posts from './Posts/Posts'
-
+import PostApiService from '../../services/posts-api-service'
+import ImageApiService from '../../services/images-api-service'
+import PostContext from '../../contexts/PostContext'
 export default class ViewPosts extends Component {
+    
+    static contextType = PostContext
+
+    componentDidMount(){
+        this.context.clearError()
+        PostApiService.getPosts()
+            .then(posts => this.context.setPosts(posts))
+            .catch(this.context.setError)
+       
+        ImageApiService.getImages()
+            .then(images => this.context.setImages(images))
+            .catch(this.context.setError)
+    }
+
     render() {
         return (
             <>
                 <section className="view-posts-post-box">
-                    <Posts/>
+                    <Posts
+                        posts={this.context.posts}
+                        images={this.context.images}
+                    />
                 </section>
                 <Link
                         className="view-posts-link"
