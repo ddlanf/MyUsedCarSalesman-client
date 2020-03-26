@@ -66,7 +66,7 @@ export default class Register extends Component {
                     <label name="user-name" className="register-label">User Name</label>
                     <input 
                         name="user_name" 
-                        type="text" 
+                        type="password" 
                         className="register-input"
                         onChange={this.handleInputChange}/>
                     <label name="password" className="register-label">Password</label>

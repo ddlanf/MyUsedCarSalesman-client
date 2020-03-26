@@ -1,9 +1,9 @@
   .view-posts-post{
     width: 40%;
-    border: 1px solid black;
     border-radius: 10%;
     margin: 1%;
     margin-top: 6%;
+    border: black solid 1px;
   }
   
   .view-posts-car-image-box{

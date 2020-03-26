@@ -20,8 +20,7 @@ export default class Nav extends Component {
             </Link>
             <Link 
                 className="nav-link register-link"
-                to='/register'
-                >
+                to='/register'>
                 Register
             </Link>
         </div>);
@@ -33,13 +32,13 @@ export default class Nav extends Component {
         const rightNavBar = 
             (<div className="right-nav">
                 <Link 
-                    className="my-posts-link"
+                    className="my-posts-link nav-link"
                     to='/view-my-posts'
                     >
                     My Posts
                 </Link>
                 <Link   
-                    className="log-out-link"
+                    className="log-out-link nav-link"
                     to="/view-posts"
                     onClick={this.props.userLogOut}
                     >
