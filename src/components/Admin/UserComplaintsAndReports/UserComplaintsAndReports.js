@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import { dummyData } from '../../dummyData'
 
 export default class UserComplaintsAndReports extends Component {
     
     renderUserReports(){
-        const { userReports } = dummyData;
-
-        const userTable = userReports.map(report => {
+        const { reports } = this.props
+        const userTable = reports.map(report => {
             return (
                 <tr 
                      key={report.id}
@@ -30,7 +28,7 @@ export default class UserComplaintsAndReports extends Component {
                 <table className="admin-table reports">
                     <thead>
                         <tr className="about-reports">
-                            <th>Username</th>
+                            <th>ID</th>
                             <th>Message</th>
                             <th>Type</th>
                             <th>User ID</th>

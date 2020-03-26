@@ -1,6 +1,14 @@
 
 .admin{
-   margin-bottom: 5%;
+   z-index: 15;
+   position: relative;
+   margin-top: -2%;
+   background-color: white;
+}
+
+.admin-header{
+   padding-top: 5%;
+   font-size: 5vw;
 }
 
 .admin-info{
@@ -36,4 +44,14 @@ th{
    font-size: 2vw;
  }
  
+ .admin-return{
+   margin-top: 5%;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 10%;
+   display: block;
+   width: 10%;
+   height: 5vw;
+   font-size: 2vw;
+ }
  

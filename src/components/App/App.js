@@ -12,13 +12,61 @@ import Register from '../Register/Register'
 import ViewPost from '../ViewPost/ViewPost'
 import ViewPosts from '../ViewPosts/ViewPosts'
 import NotFoundPage from '../NotFoundPage/NotFoundPage'
-
+import TokenService from '../../services/token-service'
+import AuthApiService from '../../services/auth-api-service'
 export default class App extends Component {
+
+  constructor(props){
+    super(props)
+
+    this.state = {
+      isUserLoggedIn: TokenService.hasAuthToken(),
+    }
+  }
+
+  userLogOut = () =>{
+    TokenService.clearAuthToken()
+
+    this.setState({
+      isUserLoggedIn: false
+    })
+  }
+
+  userLogIn = () => {
+    this.setState({
+      isUserLoggedIn: true
+    })
+  }
+
+  verifyJwt = () => {
+    if(TokenService.hasAuthToken()){
+        AuthApiService.checkJWTtoken()
+         .then(jwt =>{
+           if(jwt.status === 'expired'){ this.userLogOut() }
+         })
+     } 
+}
+
+  componentDidMount() {
+    if(TokenService.hasAuthToken()){
+      this.verifyJwt()
+    }
+    this.interval = setInterval(() => this.verifyJwt(), 180000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   render() {
+    
     return (
       <div className='App'>
         <header className='App_header'>
-            <Nav />
+            <Nav 
+              userLogOut={this.userLogOut}
+              isUserLoggedIn={this.state.isUserLoggedIn}
+            />
         </header>
         <main className='App_main'>
           <Switch>
@@ -30,7 +78,7 @@ export default class App extends Component {
             <Route
               exact 
               path={'/admin'}
-              component={Admin}
+              render={(props) => <Admin {...props} isUserLoggedIn={this.state.isUserLoggedIn} userLogOut={this.userLogOut}/>}
             />
             <Route
               exact 
@@ -40,12 +88,12 @@ export default class App extends Component {
             <Route
               exact 
               path={'/login'}
-              component={Login}
+              render={(props) => <Login {...props} isUserLoggedIn={this.state.isUserLoggedIn} userLogIn={this.userLogIn}/>}
             />
             <Route
               exact 
               path={'/register'}
-              component={Register}
+              render={(props) => <Register {...props} isUserLoggedIn={this.state.isUserLoggedIn} userLogIn={this.userLogIn}/>}
             />
             <Route
               exact 
@@ -59,7 +107,7 @@ export default class App extends Component {
             />
             <Route
               exact 
-              path={'/edit-post'}
+              path={'/edit-post/:postId'}
               component={EditPost}
             />
             <Route

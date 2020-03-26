@@ -32,6 +32,7 @@
     margin-top: 0;
 }
 
+
 .admin-login-input{
     margin-bottom: 5%;
     margin-top: 0;
@@ -60,6 +61,10 @@
     margin: 5%;
 }
   
+.login-error{
+    color: red
+}
+
 @media screen and (min-width: 1000px) {
   
       .admin-login-box > *{

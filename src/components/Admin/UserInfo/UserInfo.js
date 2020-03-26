@@ -1,12 +1,21 @@
 import React, { Component } from 'react'
-import { dummyData } from '../../dummyData'
+import UserService from '../../../services/users-api-service'
 
 export default class UserInfo extends Component {
 
+    blockOrUnblockUser(user_id){
+        UserService.blockUser(user_id)
+            .then(window.location.reload())
+    }
+    
+    deleteUser(user_id){
+        UserService.deleteUser(user_id)
+            .then(window.location.reload())
+    }
+
     renderUserInfo(){
-        const { userData } = dummyData;
-        
-        const userTable = userData.map(user => {
+        const { users } = this.props
+        const userTable = users.map(user => {
             return (
                 <tr 
                     key={user.id}
@@ -19,12 +28,16 @@ export default class UserInfo extends Component {
                     <th>{user.email}</th>
                     <th>{user.date_created}</th>
                     <th>
-                        <button className="admin-block">
-                            Block
+                        <button 
+                            onClick={() => this.blockOrUnblockUser(user.id)}
+                            className="admin-block">
+                            {(user.user_status === "Blocked" ? "Unblock" : "Block")}
                         </button>
                     </th>
                     <th>
-                        <button className="admin-delete">
+                        <button 
+                             onClick={() => this.deleteUser(user.id)}
+                            className="admin-delete">
                             Delete
                         </button>
                     </th>
@@ -62,3 +75,4 @@ export default class UserInfo extends Component {
         )
     }
 }
+

@@ -1,12 +1,19 @@
 import React, { Component } from 'react'
-import { dummyData } from '../../dummyData'
 
 export default class UserPosts extends Component {
 
-    renderUserPosts(){
-        const { userPosts} = dummyData;
+    findUserId(post){
+        const { users } = this.props
+        for(let i = 0; i < users.length; i++){
+            if(users[i].user_name === post.user_name){
+                return users[i].id
+            }
+        } 
+    }
 
-        const userTable = userPosts.map(post => {
+    renderUserPosts(){
+        const { posts } = this.props
+        const userTable = posts.map(post => {
             return (
                 <tr 
                     key={post.id}
@@ -21,7 +28,7 @@ export default class UserPosts extends Component {
                     <th className="admin-paragraph">{post.commission_amount}</th>
                     <th>{post.location}</th>
                     <th className="admin-paragraph">{post.other_terms_and_conditions}</th>
-                    <th>{post.user_id}</th>
+                    <th>{this.findUserId(post)}</th>
                 </tr>
             )
         })

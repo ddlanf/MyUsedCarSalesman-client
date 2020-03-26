@@ -59,6 +59,10 @@
     color: black;
     text-decoration: none;
 }
+
+.login-error{
+    color: red
+}
   
 @media screen and (min-width: 1000px) {
   

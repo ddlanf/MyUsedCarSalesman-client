@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { dummyData } from '../../dummyData'
 import './Posts.css'
 
 export default class Posts extends Component {
 
     rendorPosts(){
-        //const  dummyPosts  = dummyData.userPosts;
         const { images } = this.props
         const thumbNailDefault = [{ "src": "", "alt":"" }]
         const userPosts = this.props.posts

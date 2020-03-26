@@ -60,6 +60,13 @@
     vertical-align: middle;
     font-size: 3vw;
 }
+
+
+.register-error{
+    color: red;
+    font-size: 22px;
+    margin-top: 0;
+}
   
 @media screen and (min-width: 1000px) {
   

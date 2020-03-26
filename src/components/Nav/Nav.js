@@ -1,36 +1,17 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import PostContext from '../../contexts/PostContext'
 import './Nav.css'
 
-//Set it to not logged in for now
-let isUserLoggedIn = false;
 
 export default class Nav extends Component {
-   
-   logOut = () => {
-        isUserLoggedIn = false
-    }
 
-    rendorRightNavBar(){
-     
-        const rightNavBar = isUserLoggedIn ? 
-            (<div className="right-nav">
-                <Link 
-                    className="my-posts-link"
-                    to='/my-posts'
-                    >
-                    My Posts
-                </Link>
-                <Link   
-                    className="log-out-link"
-                    to="/view-posts"
-                    onClick={() => this.logout}
-                    >
-                    Log out
-                </Link>
-            </div>)
-            :
-            (<div className="right-nav">
+    static contextType = PostContext
+
+    rendorLogOutNavBar(){
+    
+        const rightNavBar = 
+        (<div className="right-nav">
             <Link 
                 className="nav-link login-link"
                 to='/login'  
@@ -48,7 +29,28 @@ export default class Nav extends Component {
         return rightNavBar;   
     }
 
+    rendorLoginNavBar(){
+        const rightNavBar = 
+            (<div className="right-nav">
+                <Link 
+                    className="my-posts-link"
+                    to='/view-my-posts'
+                    >
+                    My Posts
+                </Link>
+                <Link   
+                    className="log-out-link"
+                    to="/view-posts"
+                    onClick={this.props.userLogOut}
+                    >
+                    Log out
+                </Link>
+            </div>)
+        return rightNavBar;   
+    }
+
     render() {
+
         return (
                 <nav
                     className='nav-bar'
@@ -63,7 +65,7 @@ export default class Nav extends Component {
                             MyUsedCarSalesman
                         </Link>
                     </div>
-                    {this.rendorRightNavBar()}
+                    {this.props.isUserLoggedIn ? this.rendorLoginNavBar() : this.rendorLogOutNavBar()}
                 </nav>
         )
     }

@@ -5,6 +5,8 @@ import Posts from './Posts/Posts'
 import PostApiService from '../../services/posts-api-service'
 import ImageApiService from '../../services/images-api-service'
 import PostContext from '../../contexts/PostContext'
+import TokenService from '../../services/token-service'
+
 export default class ViewPosts extends Component {
     
     static contextType = PostContext
@@ -29,6 +31,7 @@ export default class ViewPosts extends Component {
                         images={this.context.images}
                     />
                 </section>
+                {TokenService.hasAuthToken() ?
                 <Link
                         className="view-posts-link"
                         to="./make-post"
@@ -37,7 +40,15 @@ export default class ViewPosts extends Component {
                         Create Post
                       </button>
                 </Link>
-              
+                :
+                <Link
+                        className="view-posts-link"
+                        to="./login"
+                        >
+                      <button className="create-post-button"> 
+                        Create Post
+                      </button>
+                </Link>}
             </>
         )
     }
