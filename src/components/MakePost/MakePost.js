@@ -49,12 +49,12 @@ export default class MakePost extends Component {
 
             for(let [key, value] of Object.entries(newPost)){
                 if(value == null || value === ''){
-                   this.setState({error : `please enter ${key}`})
+                   this.setState({error : `Please enter ${key}`})
                    validPost = false
             }
                
                 if(image === ''){
-                    this.setState({error : `please enter image link`})
+                    this.setState({error : `Please enter image link`})
                     validPost = false
                 }
             }
@@ -88,7 +88,7 @@ export default class MakePost extends Component {
                             })
                     })
                     .catch(res => {
-                        this.setState({ buffer: false, error: res.error })
+                       this.setState({ buffer: false, error: res.error })
                     })
             }
 
@@ -105,11 +105,7 @@ export default class MakePost extends Component {
              [name] : value 
         })
         
-        if(name === "location"){
-           
-        }
     }
-
 
     render() {
         return (
@@ -163,7 +159,7 @@ export default class MakePost extends Component {
                                     className="make-post-input make-post-commission"
                                     name="commission_amount"
                                     onChange={this.handleInputChange}/>
-                                <label name="location" className="make-post-label">Location (city, state)</label>
+                                <label name="location" className="make-post-label">Location (City, State)</label>
                                 <input 
                                     className="make-post-input make-post-location"
                                     name="location"
@@ -182,10 +178,10 @@ export default class MakePost extends Component {
                                     onChange={this.handleInputChange}/>
                             </div>
                         </div>
+                        {<p className="make-post-error">{this.state.buffer ? '' : this.state.error}</p>}
+                        {<p className="make-post-buffer">{this.state.buffer ? 'Uploading please wait...' : ''}</p>}
                         <button disabled={this.state.clicked} id="submit" type="submit" className="make-post-submit">Submit</button>
                     </form>
-                    {<p className="make-post-error">{this.state.error}</p>}
-                    {<p className="make-post-buffer">{this.state.buffer ? 'Uploading please wait...' : ''}</p>}
                 </section> 
             </div>
         )

@@ -16,7 +16,9 @@ export default class Register extends Component {
 
     registerUser = (ev) =>{
         ev.preventDefault()
-        const user = this.state
+        const { first_name, last_name, user_name, password, email} = this.state
+
+        const user = { first_name, last_name, user_name, password, email }
 
         let validUser = true
 
@@ -102,11 +104,11 @@ export default class Register extends Component {
                         type="text" 
                         className="register-input"
                         onChange={this.handleInputChange}/>
+                    <p className="register-error">{this.state.error}</p>
                     <input 
                         type="submit" 
                         className="register-submit"/>
                 </form>
-                <p className="register-error">{this.state.error}</p>
             </div>
            
             </>

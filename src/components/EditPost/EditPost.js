@@ -202,7 +202,7 @@ class EditPost extends Component {
                                     name="commission_amount"
                                     defaultValue={this.state.prevPost.commission_amount} 
                                     onChange={this.handleInputChange}/>
-                                <label name="location" className="edit-post-label">Location</label>
+                                <label name="location" className="edit-post-label">Location (City, State)</label>
                                 <input 
                                     className="edit-post-input edit-post-location"
                                     name="location"
@@ -224,10 +224,10 @@ class EditPost extends Component {
                                     onChange={this.handleInputChange}/>
                             </div>
                         </div>
+                        {<p className="edit-post-error">{this.state.buffer ? '' : this.state.error}</p>}
+                        {<p className="edit-post-buffer">{this.state.buffer ? 'Uploading please wait...' : ''}</p>}
                         <button disabled={this.state.clicked} id="submit" type="submit" className="edit-post-submit">Submit</button>
                     </form>
-                    {<p className="edit-post-error">{this.state.error}</p>}
-                    {<p className="edit-post-buffer">{this.state.buffer ? 'Uploading please wait...' : ''}</p>}
                 </section> 
             </div>
         )

@@ -1,25 +1,26 @@
 .make-post-heading{
     margin-top: 11%;
-    padding-left: 10vw;
     font-size: 4vw;
-    text-align: left;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0;
 }
 
 .make-post-form{
-    border: 1px solid white;
-    width: 80%;
+    border: 1px solid  black;
+    width: 85%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10%;
+    padding-bottom: 2%;
     position: relative;
 }
 
 .make-post-input-box{
-    width: 85%;
+    width: 90%;
     padding: 0;
-    height: 75vw;
-    min-height: 280px;
+    min-height: 200px;
     max-height: 950px;
     margin-left: auto;
     margin-right: auto;
@@ -32,10 +33,9 @@
 .make-post-right, .make-post-left{
     width: 50%;
     margin: 0;
-    height: 45vh;
     display: inline-block;
     position: relative;
-    vertical-align: middle;
+    vertical-align: top;
 }
 
 .make-post-label, .make-post-input, textarea{
@@ -56,7 +56,7 @@
 }
 
  .make-post-description{
-    height: 25vw;
+    height: 23vw;
     width: 85%;
  }
 
@@ -77,19 +77,18 @@
 
  .make-post-submit{
     display: block;
-    position: absolute;
-    left: 30%;
-    bottom: 10%;
     height: 5vw;
     width: 40%;
+    margin-left: auto;
+    margin-right: auto;
     font-size: 2vw;
 }
 
 .make-post-error, .make-post-buffer{
-    margin-top: -5%;
-    margin-bottom: 2%;
     color: red;
     display: block;
+    margin-bottom: 1%;
+    margin-top: 0;
     width: 100%;
     text-align: center;
     font-size: 3vw;
