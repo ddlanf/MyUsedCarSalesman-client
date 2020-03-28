@@ -5,12 +5,12 @@ export default class UserInfo extends Component {
 
     blockOrUnblockUser(user_id){
         UserService.blockUser(user_id)
-            .then(window.location.reload())
+            .then(()=> this.props.updateUsers())
     }
     
     deleteUser(user_id){
         UserService.deleteUser(user_id)
-            .then(window.location.reload())
+        .then(() => this.props.updateUsers())
     }
 
     renderUserInfo(){

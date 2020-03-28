@@ -3,11 +3,13 @@ import { withRouter } from 'react-router-dom'
 import './EditPost.css'
 import PostApiService from '../../services/posts-api-service'
 import ImageApiService from '../../services/images-api-service'
+import PostContext from '../../contexts/PostContext'
 
 class EditPost extends Component {
 
     _isMounted = false;
 
+    static contextType = PostContext
 
     constructor(props){
         super(props);
@@ -24,17 +26,21 @@ class EditPost extends Component {
                     image : '',
                     prevPost : {},
                     prevImage : '',
+                    clicked: false,
+                    buffer: false
         }
     }
 
     editPost = (ev) =>{
+
+        this.setState({ clicked: true })
         
         ev.preventDefault()
         const { make, model, year, 
             mileage, description, 
             commission_amount, 
             location, price, 
-            other_terms_and_conditions } = this.state
+            other_terms_and_conditions, image } = this.state
         
         const tempPost = { make, model, year, 
             mileage, description, 
@@ -45,32 +51,59 @@ class EditPost extends Component {
         let updatedPost = {}
 
         for(const key in tempPost){
+           
             if(tempPost[key]){
                 updatedPost[key] = tempPost[key]
             }
         }
 
+    
+        const { history } = this.props
         const { postId } = this.props.match.params
 
         if(Object.keys(updatedPost).length){
-        
+            this.setState({ buffer: true })
             PostApiService.editPost(postId, updatedPost)
+                .then(() => {
+                    PostApiService.getPosts()
+                        .then(posts =>{ 
+                            this.context.setPosts(posts) 
+                            if(!image){ history.push('/view-posts') }
+                        })
+                        .catch(res =>{
+                            if(this._isMounted){
+                                this.setState({ buffer: false, error: res.error })
+                            }
+                        })
+                })
                 .catch(res => {
+                    history.push('/view-posts') 
                     if(this._isMounted){this.setState({ error: res.error })}
                 })
         }
          
-        const { image } = this.state
         const updatedImage = { src : image } 
-        
+    
         if(image){
             ImageApiService.editImage(updatedImage, postId)
+                .then(() => {
+                    ImageApiService.getImages()
+                        .then(images =>{ 
+                            this.context.setImages(images) 
+                            history.push('/view-posts')
+                        })
+                        .catch(res =>{
+                            if(this._isMounted){
+                                this.setState({ buffer: false, error: res.error })
+                            }
+                        })
+                })
                 .catch(res => {
                     if(this._isMounted){this.setState({ error: res.error })}
                 })
         }
 
-        this.props.history.push('/view-posts')
+        if(!image && !Object.keys(updatedPost).length){ history.push('/view-posts') }
     }
 
     handleInputChange = (event) =>{
@@ -135,14 +168,14 @@ class EditPost extends Component {
                                     onChange={this.handleInputChange}/>
                                 <label name="year" className="edit-post-label">Year</label>
                                 <input 
-                                    type="text" 
+                                    type="number" 
                                     className="edit-post-input"
                                     name="year"
                                     defaultValue={this.state.prevPost.year} 
                                     onChange={this.handleInputChange}/>
                                 <label name="mileage" className="edit-post-input">Mileage</label>
                                 <input 
-                                    type="text" 
+                                    type="number" 
                                     className="edit-post-input"
                                     name="mileage"
                                     defaultValue={this.state.prevPost.mileage} 
@@ -157,7 +190,7 @@ class EditPost extends Component {
                             <div className="edit-post-right">
                                 <label name="price" className="edit-post-label">Price</label>
                                 <input 
-                                    type="text" 
+                                    type="number" 
                                     className="edit-post-input"
                                     name="price"
                                     defaultValue={this.state.prevPost.price} 
@@ -173,6 +206,7 @@ class EditPost extends Component {
                                 <input 
                                     className="edit-post-input edit-post-location"
                                     name="location"
+                                    type="text"
                                     defaultValue={this.state.prevPost.location} 
                                     onChange={this.handleInputChange}/>
                                 <label name="terms-and-cond" className="edit-post-label">Other Terms and Conditions</label>
@@ -185,12 +219,15 @@ class EditPost extends Component {
                                 <input 
                                     className="edit-post-input edit-post-image"
                                     name="image"
+                                    type="text"
                                     defaultValue={this.state.prevImage} 
                                     onChange={this.handleInputChange}/>
                             </div>
                         </div>
-                        <button id="submit" type="submit" className="edit-post-submit">Submit</button>
+                        <button disabled={this.state.clicked} id="submit" type="submit" className="edit-post-submit">Submit</button>
                     </form>
+                    {<p className="edit-post-error">{this.state.error}</p>}
+                    {<p className="edit-post-buffer">{this.state.buffer ? 'Uploading please wait...' : ''}</p>}
                 </section> 
             </div>
         )

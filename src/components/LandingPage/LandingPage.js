@@ -10,7 +10,12 @@ export default class LandingPage extends Component {
             <div className="landing-page">
                 <Hero/>
                 <Headings/>
-                <AuthBoxes/>
+                <AuthBoxes 
+                    isUserLoggedIn={this.props.isUserLoggedIn} 
+                    userLogIn={this.props.userLogIn}
+                    history={this.props.history}
+                    />
+                   
             </div>
         )
     }

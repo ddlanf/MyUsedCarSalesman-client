@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import './MakePost.css'
 import PostApiService from '../../services/posts-api-service'
 import ImageApiService from '../../services/images-api-service'
+import PostContext from '../../contexts/PostContext'
+
 export default class MakePost extends Component {
+
+    static contextType = PostContext
 
     constructor(props){
         super(props);
@@ -17,18 +21,23 @@ export default class MakePost extends Component {
                     location: '',
                     other_terms_and_conditions : '',
                     user_id: 1,
-                    image : ''
+                    image : '',
+                    clicked: false,
+                    buffer: false
         }
     }
 
     
     createPost = (ev) =>{
+
+        this.setState({ clicked: true })
+
         ev.preventDefault()
         const { make, model, year, 
             mileage, description, 
             commission_amount, 
             location, price, 
-            other_terms_and_conditions } = this.state
+            other_terms_and_conditions, image} = this.state
         
         const newPost = { make, model, year, 
             mileage, description, 
@@ -36,24 +45,59 @@ export default class MakePost extends Component {
             location, price, 
             other_terms_and_conditions }
         
-            PostApiService.createPost(newPost)
-                .then(post=> {
-                
-                    const newImage = { 
-                        post_id: post.id, 
-                        alt: [post.make, post.model, post.year].join(' '), 
-                        src: this.state.image 
-                    }
-                    ImageApiService.postImage(newImage)
-                        .then(this.props.history.push('/view-posts'))
-                })
-                .catch(res => {
-                    this.setState({ error: res.error })
-                })
+            let validPost = true
+
+            for(let [key, value] of Object.entries(newPost)){
+                if(value == null || value === ''){
+                   this.setState({error : `please enter ${key}`})
+                   validPost = false
+            }
+               
+                if(image === ''){
+                    this.setState({error : `please enter image link`})
+                    validPost = false
+                }
+            }
+
+            if(validPost){
+                this.setState({ buffer: true })
+                PostApiService.createPost(newPost)
+                    .then(post=> {
+                        const newImage = { 
+                            post_id: post.id, 
+                            alt: [post.make, post.model, post.year].join(' '), 
+                            src: this.state.image 
+                        }
+                        ImageApiService.postImage(newImage)
+                            .then(() =>{
+                                this.context.clearError()
+                                PostApiService.getPosts()
+                                    .then(posts => { 
+                                        this.context.setPosts(posts)
+                                        ImageApiService.getImages()
+                                             .then(images => { 
+                                                 this.context.setImages(images) 
+                                                 this.props.history.push('/view-posts')
+                                              })
+                                             .catch(this.context.setError)
+                                    })
+                                    .catch(this.context.setError)
+                            })
+                            .catch(res => { 
+                                this.setState({ buffer: false, error: res.error })
+                            })
+                    })
+                    .catch(res => {
+                        this.setState({ buffer: false, error: res.error })
+                    })
+            }
 
     }
 
     handleInputChange = (event) =>{
+
+        this.setState({ clicked: false })
+
         const { name } = event.target
         const { value } = event.target
         
@@ -61,7 +105,11 @@ export default class MakePost extends Component {
              [name] : value 
         })
         
+        if(name === "location"){
+           
+        }
     }
+
 
     render() {
         return (
@@ -87,13 +135,13 @@ export default class MakePost extends Component {
                                     onChange={this.handleInputChange}/>
                                 <label name="year" className="make-post-label">Year</label>
                                 <input 
-                                    type="text" 
+                                    type="number" 
                                     className="make-post-input"
                                     name="year"
                                     onChange={this.handleInputChange}/>
                                 <label name="mileage" className="make-post-input">Mileage</label>
                                 <input 
-                                    type="text" 
+                                    type="number" 
                                     className="make-post-input"
                                     name="mileage"
                                     onChange={this.handleInputChange}/>
@@ -106,19 +154,21 @@ export default class MakePost extends Component {
                             <div className="make-post-right">
                                 <label name="price" className="make-post-label">Price</label>
                                 <input 
-                                    type="text" 
+                                    type="number" 
                                     className="make-post-input"
                                     name="price"
                                     onChange={this.handleInputChange}/>
-                                <label name="commission" className="make-post-label">Commision</label>
+                                <label name="commission" className="make-post-label">Commision (Ex: 20%)</label>
                                 <input 
                                     className="make-post-input make-post-commission"
                                     name="commission_amount"
                                     onChange={this.handleInputChange}/>
-                                <label name="location" className="make-post-label">Location</label>
+                                <label name="location" className="make-post-label">Location (city, state)</label>
                                 <input 
                                     className="make-post-input make-post-location"
                                     name="location"
+                                    type="text"
+                                    list="locations"
                                     onChange={this.handleInputChange}/>
                                 <label name="terms-and-cond" className="make-post-label">Other Terms and Conditions</label>
                                 <textarea 
@@ -132,8 +182,10 @@ export default class MakePost extends Component {
                                     onChange={this.handleInputChange}/>
                             </div>
                         </div>
-                        <button id="submit" type="submit" className="make-post-submit">Submit</button>
+                        <button disabled={this.state.clicked} id="submit" type="submit" className="make-post-submit">Submit</button>
                     </form>
+                    {<p className="make-post-error">{this.state.error}</p>}
+                    {<p className="make-post-buffer">{this.state.buffer ? 'Uploading please wait...' : ''}</p>}
                 </section> 
             </div>
         )

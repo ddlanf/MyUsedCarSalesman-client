@@ -60,6 +60,19 @@ const PostApiService = {
             : res.json()
         )
     },
+    deletePostAdmin(postId) {
+      return fetch(`${config.API_ENDPOINT}/posts/admin/${postId}`, {
+        method: 'DELETE',
+        headers: {
+          'content-type': 'application/json',
+          'authorization': `bearer ${TokenService.getAuthToken()}`,  }
+      })
+        .then(res =>
+          (!res.ok)
+            ? res.json().then(e => Promise.reject(e))
+            : res.json()
+        )
+    },
     editPost(postId, postToUpdate) {
       return fetch(`${config.API_ENDPOINT}/posts/${postId}`, {
         method: 'PATCH',

@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import './Login.css'
 import {Link} from 'react-router-dom'
 import AuthApiService from '../../services/auth-api-service'
+import PostContext from '../../contexts/PostContext'
 
 export default class Login extends Component {
+
+    static contextType = PostContext
 
     constructor(props){
         super(props);
@@ -16,15 +19,28 @@ export default class Login extends Component {
 
     loginUser = (ev) =>{
         ev.preventDefault()
-        const user = this.state
-        AuthApiService.postLogin(user)
-            .then(user => {
-                this.props.history.push('/view-posts')
-                this.props.userLogIn()
-            })
-            .catch(res => {
-                this.setState({ error: res.error })
-            })
+        const { user_name, password } = this.state
+        const returningUser = { user_name, password }
+
+        let validUser = true
+        for(let [key, value] of Object.entries(returningUser)){
+            if(value == null || value === ''){
+               this.context.setError(`please enter ${key.replace('_', ' ')}`)
+               validUser = false
+            }
+        }
+
+        if(validUser){
+            this.context.clearError()
+            AuthApiService.postLogin(returningUser)
+                .then(user => {
+                    this.props.history.push('/view-posts')
+                    this.props.userLogIn()
+                })
+                .catch(res => {
+                    this.context.setError(res.error)
+                })
+        }
     }
 
     handleInputChange = (event) =>{
@@ -60,7 +76,7 @@ export default class Login extends Component {
                             onChange={this.handleInputChange}/>
                         <input type="submit" className="login-submit"></input>
                     </form>
-                    {<p className='login-error'>{this.state.error}</p>}
+                    {<p className='login-error'>{this.context.error}</p>}
                     <p>New to MyUsedCarSalesman?
                         <span className="break">
                             <Link

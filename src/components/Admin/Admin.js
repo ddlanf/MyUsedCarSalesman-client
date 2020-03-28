@@ -17,6 +17,7 @@ export default class Admin extends Component {
             reports:[]
         }
     }
+    
     componentDidMount(){
         UserService.getUsers()
             .then(users => this.setState({users}))
@@ -24,6 +25,16 @@ export default class Admin extends Component {
             .then(posts => this.setState({posts}))
         ReportApiService.getReports()
             .then(reports => this.setState({reports}))
+    }
+
+    updateUsers = () => {
+        UserService.getUsers()
+            .then(users => this.setState({users}))
+    }
+
+    updatePosts = () => {
+        PostService.getPosts()
+            .then(posts => this.setState({posts}))
     }
 
     adminExit = () =>{
@@ -36,7 +47,7 @@ export default class Admin extends Component {
 
                 <h1 className="admin-header">Admin Info</h1>
                 <section className="admin-info">   
-                    <UserInfo users={this.state.users}/>
+                    <UserInfo users={this.state.users} updateUsers={this.updateUsers}/>
                 </section>
 
                 <section className="admin-info">
@@ -46,7 +57,9 @@ export default class Admin extends Component {
                 <section className="admin-info">
                      <UserPosts
                         users={this.state.users} 
-                        posts={this.state.posts}/>
+                        posts={this.state.posts}
+                        updatePosts={this.updatePosts}
+                        />
                 </section>
                 <Link
                     to={'/view-posts'}

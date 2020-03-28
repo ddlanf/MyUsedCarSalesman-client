@@ -85,3 +85,13 @@
     font-size: 2vw;
 }
 
+.make-post-error, .make-post-buffer{
+    margin-top: -5%;
+    margin-bottom: 2%;
+    color: red;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 3vw;
+}
+

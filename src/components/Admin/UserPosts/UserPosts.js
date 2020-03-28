@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PostApiService from '../../../services/posts-api-service'
 export default class UserPosts extends Component {
 
     findUserId(post){
@@ -9,6 +9,13 @@ export default class UserPosts extends Component {
                 return users[i].id
             }
         } 
+    }
+
+    deletePost = (post_id) =>{
+        PostApiService.deletePostAdmin(post_id)
+            .then(() => {
+                this.props.updatePosts()
+            })
     }
 
     renderUserPosts(){
@@ -29,6 +36,13 @@ export default class UserPosts extends Component {
                     <th>{post.location}</th>
                     <th className="admin-paragraph">{post.other_terms_and_conditions}</th>
                     <th>{this.findUserId(post)}</th>
+                    <th>
+                        <button 
+                             onClick={() => this.deletePost(post.id)}
+                            className="admin-delete">
+                            Delete
+                        </button>
+                    </th>
                 </tr>
             )
         })
@@ -55,6 +69,7 @@ export default class UserPosts extends Component {
                             <th>Location</th>
                             <th>Other terms and conditions</th>
                             <th>User ID</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>

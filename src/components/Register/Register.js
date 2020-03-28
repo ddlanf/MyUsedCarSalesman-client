@@ -17,20 +17,41 @@ export default class Register extends Component {
     registerUser = (ev) =>{
         ev.preventDefault()
         const user = this.state
-        AuthApiService.postUser(user)
-            .then(message => {
-                AuthApiService.postLogin(user)
+
+        let validUser = true
+
+        for(let [key, value] of Object.entries(user)){
+            if(value == null || value === ''){
+                this.setState({
+                    error: `Please enter ${key.replace('_', ' ')}`
+                })
+                validUser = false
+            }
+            if(value.trim() !== value){
+                this.setState({
+                    error: `Inputs cannot contain space`
+                })
+                validUser = false
+            }
+        }
+
+        if(validUser){
+
+            AuthApiService.postUser(user)
                 .then(message => {
-                    this.props.history.push('/view-posts')
-                    this.props.userLogIn()
+                    AuthApiService.postLogin(user)
+                    .then(message => {
+                        this.props.history.push('/view-posts')
+                        this.props.userLogIn()
+                    })
+                    .catch(res => {
+                        this.setState({ error: res.error })
+                    })
                 })
                 .catch(res => {
                     this.setState({ error: res.error })
                 })
-            })
-            .catch(res => {
-                this.setState({ error: res.error })
-            })
+        }
     }
 
     handleInputChange = (event) =>{
@@ -66,13 +87,13 @@ export default class Register extends Component {
                     <label name="user-name" className="register-label">User Name</label>
                     <input 
                         name="user_name" 
-                        type="password" 
+                        type="text" 
                         className="register-input"
                         onChange={this.handleInputChange}/>
                     <label name="password" className="register-label">Password</label>
                     <input 
                         name="password" 
-                        type="text" 
+                        type="password" 
                         className="register-input"
                         onChange={this.handleInputChange}/>
                     <label name="email" className="register-label">Email</label>

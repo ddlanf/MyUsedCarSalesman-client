@@ -45,7 +45,7 @@ export default class App extends Component {
            if(jwt.status === 'expired'){ this.userLogOut() }
          })
      } 
-}
+  }
 
   componentDidMount() {
     if(TokenService.hasAuthToken()){
@@ -73,7 +73,7 @@ export default class App extends Component {
             <Route
               exact 
               path={'/'}
-              component={LandingPage}
+              render={(props) => <LandingPage {...props} isUserLoggedIn={this.state.isUserLoggedIn} userLogIn={this.userLogIn}/>}
             />
             <Route
               exact 
