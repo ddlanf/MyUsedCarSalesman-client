@@ -59,6 +59,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    //After login, check if jwt has expried. If yes, then automaticly log the user out
     if(TokenService.hasAuthToken()){
       this.verifyJwt()
     }

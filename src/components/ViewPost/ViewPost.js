@@ -23,7 +23,7 @@ class ViewPost extends Component {
                     this.context.setError 
                 )
         }
-        else{ this.props.history.push('/login')}
+        else{ this.props.history.push('/login') }
     }
 
     componentDidMount(){
@@ -39,7 +39,6 @@ class ViewPost extends Component {
         ImageApiService.getImage(postId)
             .then(images => this.context.setImages(images))
             .catch(this.context.setError)
-    
     }
 
 

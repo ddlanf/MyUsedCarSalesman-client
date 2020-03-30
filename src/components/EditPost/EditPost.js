@@ -113,7 +113,6 @@ class EditPost extends Component {
         this.setState({
              [name] : value 
         })
-        
     }
 
     componentDidMount(){

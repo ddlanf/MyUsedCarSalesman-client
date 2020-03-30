@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Register.css'
 import { Link } from 'react-router-dom'
 import AuthApiService from '../../services/auth-api-service'
+
 export default class Register extends Component {
 
     constructor(props){

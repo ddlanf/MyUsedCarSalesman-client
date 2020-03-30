@@ -63,8 +63,8 @@ export default class Nav extends Component {
                             MyUsedCarSalesman
                         </Link>
                     </div>
-                    {this.props.isUserAtLoginOrRegister ?
-                        '' : this.props.isUserLoggedIn ? this.rendorLoginNavBar() : this.rendorLogOutNavBar()}
+                    {this.props.isUserAtLoginOrRegister ? '' : 
+                     (this.props.isUserLoggedIn ? this.rendorLoginNavBar() : this.rendorLogOutNavBar())}
                 </nav>
         )
     }

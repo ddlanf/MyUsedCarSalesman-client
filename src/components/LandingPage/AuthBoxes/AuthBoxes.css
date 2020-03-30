@@ -169,7 +169,7 @@ ol{
   margin-left: 10%;
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1800px) {
   .additional-info > p{
     font-size: 27px;
     text-align: center;

@@ -36,7 +36,7 @@
     min-height: 50px;
     font-size: 4vw;
     margin-bottom: 8%;
-    background-color: #dfe32e;
+    background-color: rgba(237, 247, 102, 0.952);
     border-radius: 10%;
     border: 1px solid #3c484d;
     font-weight: bold;
@@ -50,15 +50,14 @@
 
 
   
-  @media screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
     .view-posts-post-box{
         margin-top: 6%;
     }
 
-    
     .create-post-button{
       font-size: 30px;
       height: 100px;
       width: 200px; 
     }
-  }
+}
