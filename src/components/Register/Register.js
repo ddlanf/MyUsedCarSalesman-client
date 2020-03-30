@@ -85,7 +85,7 @@ export default class Register extends Component {
                     onSubmit={this.registerUser}
                     >
                     <label name="first-name" className="register-label">First Name</label>
-                    {this.state.error ? (this.state.error.toLowerCase().includes("last name") ? <p className='register-error'>{this.state.error}</p> : '') : ''}
+                    {this.state.error ? (this.state.error.toLowerCase().includes("first name") ? <p className='register-error'>{this.state.error}</p> : '') : ''}
                     <input 
                         name="first_name" 
                         type="text" 
