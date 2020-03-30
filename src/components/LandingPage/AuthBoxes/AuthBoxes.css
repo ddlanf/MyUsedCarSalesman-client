@@ -140,6 +140,31 @@
   text-decoration: underline;
 }
 
-@media screen and (min-width: 1000px) {
+/*for demo purposes only*/
+.demo > h1{
+  font-size: 3vw;
+  margin: 0;
+}
 
+.demo-break{
+  display: block;
+}
+
+.demo{
+  width: 80%;
+  border: solid black 1px;
+  top: 4%;
+  right: 2%;
+  background-color:  #EAEDEC;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.5vw;
+  line-height: 4vw;
+  margin-bottom: 8%;
+}
+
+ol{
+  text-align: left;
+  margin-left: 10%;
 }

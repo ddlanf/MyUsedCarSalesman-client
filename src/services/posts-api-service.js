@@ -65,7 +65,7 @@ const PostApiService = {
         method: 'DELETE',
         headers: {
           'content-type': 'application/json',
-          'authorization': `bearer ${TokenService.getAuthToken()}`,  }
+          'authorization': `bearer ${TokenService.getAdminAuthToken()}`,  }
       })
         .then(res =>
           (!res.ok)

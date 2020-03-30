@@ -7,6 +7,8 @@ import UserComplaintsAndReports from './UserComplaintsAndReports/UserComplaintsA
 import UserService from '../../services/users-api-service'
 import PostService from '../../services/posts-api-service'
 import ReportApiService from '../../services/report-api-service'
+import TokenService from '../../services/token-service'
+
 export default class Admin extends Component {
 
     constructor(props){
@@ -38,12 +40,12 @@ export default class Admin extends Component {
     }
 
     adminExit = () =>{
-        this.props.userLogOut()
+      TokenService.clearAdminAuthToken()
     }
+
 
     render() {
         return (
-            <div className="admin-background">
                 <div className="admin">
                     <h1 className="admin-header">Admin Info</h1>
                     <section className="admin-info">   
@@ -63,16 +65,12 @@ export default class Admin extends Component {
                     </section>
                     <Link
                         to={'/view-posts'}
+                        onClick={this.adminExit}
+                        className='admin-return'
                         >
-                        <button
-                            className='admin-return'
-                            onClick={this.adminExit}
-                            >
                             Return
-                        </button>
                     </Link>
                 </div>
-            </div>
         )
     }
 }

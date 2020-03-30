@@ -46,8 +46,8 @@ export default class MyPosts extends Component {
                             className="view-my-posts-car-image-box">
                             {<img 
                                 className="view-my-posts-car-image"
-                                src={thumbNail.src}
-                                alt={thumbNail.alt}
+                                src={thumbNail.src ? thumbNail.src : require('../../../Utils/myusecarsalesman_pics/notfound.png')}
+                                alt={thumbNail.alt ? thumbNail.alt : "Not Found"}
                             />}
                         </div>
                         <ul

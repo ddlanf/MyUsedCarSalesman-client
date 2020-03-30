@@ -21,12 +21,12 @@ export default class Hero extends Component {
                  </Link>
                  <img 
                         className="salesman"
-                        src={require('../../../Utils/myusecarsalesman_pics/repairman.png')}
+                        src={require('../../../Utils/myusecarsalesman_pics/salesman.png')}
                         alt="salesman"
                 />
                  <img 
                         className="yellow-car"
-                        src={require('../../../Utils/myusecarsalesman_pics/car-303614_1280_0.png')}
+                        src={require('../../../Utils/myusecarsalesman_pics/yellowcar.png')}
                         alt="yellow-car"
                 />
             </div>

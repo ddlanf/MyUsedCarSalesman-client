@@ -15,7 +15,6 @@ export default class LandingPage extends Component {
                     userLogIn={this.props.userLogIn}
                     history={this.props.history}
                     />
-                   
             </div>
         )
     }

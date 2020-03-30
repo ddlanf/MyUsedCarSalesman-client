@@ -25,12 +25,6 @@ export default class ViewPosts extends Component {
     render() {
         return (
             <>
-                <section className="view-posts-post-box">
-                    <Posts
-                        posts={this.context.posts}
-                        images={this.context.images}
-                    />
-                </section>
                 {TokenService.hasAuthToken() ?
                 <Link
                         className="view-posts-link"
@@ -49,6 +43,12 @@ export default class ViewPosts extends Component {
                         Create Post
                       </button>
                 </Link>}
+                <section className="view-posts-post-box">
+                    <Posts
+                        posts={this.context.posts}
+                        images={this.context.images}
+                    />
+                </section>
             </>
         )
     }

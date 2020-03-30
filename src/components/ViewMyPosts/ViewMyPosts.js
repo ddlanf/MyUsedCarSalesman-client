@@ -24,21 +24,20 @@ export default class ViewMyPosts extends Component {
     render() {
         return (
             <>
+                 <Link
+                    className="view-my-posts-link"
+                    to="./make-post"
+                    >
+                    <button className="create-post-button"> 
+                        Create Post
+                    </button>
+                </Link>
                 <section className="view-my-posts-post-box">
                     <MyPosts
                         posts={this.context.posts}
                         images={this.context.images}
                     />
                 </section>
-                
-                <Link
-                    className="view-my-post-link"
-                    to="./make-post"
-                    >
-                    <button className="create-post-button"> 
-                        Create Post
-                    </button>
-                 </Link>
             </>
         )
     }

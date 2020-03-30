@@ -40,6 +40,13 @@ export default class AuthBoxes extends Component {
         })
     }
 
+    //This is just for demo purposes
+    state = { clicked : false }
+
+    showDemo = () =>{
+        this.setState({ clicked: true})
+    }
+
     render() {
         return (
             <>
@@ -89,17 +96,32 @@ export default class AuthBoxes extends Component {
                         <p>All rights reserved</p>
                         <p>Created on 04/01/2020</p>
                         <p>By Daniel Laufenberg</p>
-                        <p ><a className="portfolio-link" href="https://ddlanf.github.io/Portfolio">Portfolio</a></p>
+                        <p ><a target="_blank" rel="noopener noreferrer" className="portfolio-link" href="https://ddlanf.github.io/Portfolio">Portfolio</a></p>
                         <div className="image-link-container"> 
                             <a  href="https://github.com/ddlanf">
-                                <img className="github" alt="github" target="_blank" src={require('../../../Utils/myusecarsalesman_pics/github.png')} />
+                                <img className="github" alt="github" rel="noopener noreferrer" target="_blank" src={require('../../../Utils/myusecarsalesman_pics/github.png')} />
                             </a>
                             <a  href="https://www.linkedin.com/in/daniel-laufenberg/">
-                                <img className="linkedIn" alt="linkedIn" target="_blank" src={require('../../../Utils/myusecarsalesman_pics/linkedIn.png')} />
+                                <img className="linkedIn" alt="linkedIn" rel="noopener noreferrer" target="_blank" src={require('../../../Utils/myusecarsalesman_pics/linkedIn.png')} />
                             </a> 
-                        </div>        
+                         </div>        
                    </div>  
                 </section>
+                {/*This is the demo section*/}
+                <div className="demo">
+                    {this.state.clicked ? '' : <h1 onClick={this.showDemo}>Click here for instruction</h1>}
+                    {this.state.clicked ? 
+                    <div>
+                    <h2>This is a demo</h2>
+                    <p>To use the app, there are several different options</p>
+                    <ol>
+                        <li>Log in with with credentials <span className="demo-break">username: user1 <span className="demo-break"></span>password: user1_password</span></li>
+                        <li>For admin login use <span className="demo-break"> admin name: admin <span className="demo-break"></span> password: admin_password</span></li>
+                        <li>Register a new account</li>
+                        <li>Click on "get started" to view posts without logging in</li>
+                    </ol>
+                    </div>: ''}
+                </div>
             </>
         )
     }

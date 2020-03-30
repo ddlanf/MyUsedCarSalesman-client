@@ -50,7 +50,7 @@ const AuthApiService = {
       )
       .then(res => {
        
-        TokenService.saveAuthToken(res.authToken)
+        TokenService.saveAdminAuthToken(res.authToken)
 
         return res
       })

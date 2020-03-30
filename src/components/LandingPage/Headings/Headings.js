@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './Headings.css'
 
 export default class Headings extends Component {
+
+
     render() {
         return (
             <>
@@ -14,7 +16,7 @@ export default class Headings extends Component {
                     </div>
                     <img 
                         className="heading-image money-and-car-image"
-                        src={require('../../../Utils/myusecarsalesman_pics/messageImage_1585474997595.png')}
+                        src={require('../../../Utils/myusecarsalesman_pics/moneyandcar.png')}
                         alt="money and car"
                     />
                     <div className="sub-text">
@@ -36,7 +38,7 @@ export default class Headings extends Component {
                         </p>
                         <img 
                         className="heading-image dealer"
-                        src={require('../../../Utils/myusecarsalesman_pics/presentation.png')}
+                        src={require('../../../Utils/myusecarsalesman_pics/dealer.png')}
                         alt="dealer"
                         />
                         <p>
@@ -51,7 +53,7 @@ export default class Headings extends Component {
                         </div>
                         <img 
                         className="heading-image cash"
-                        src={require('../../../Utils/myusecarsalesman_pics/CartoonMoney.png')}
+                        src={require('../../../Utils/myusecarsalesman_pics/cash.png')}
                         alt="money"
                         />
                         <div className="sub-text">

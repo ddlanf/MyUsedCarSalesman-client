@@ -39,6 +39,11 @@
     bottom: 0;
     z-index: 3;
     left: 20%;
+    opacity: 0;
+    animation-name: fade-in;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
 }
 
 .yellow-car{
@@ -47,14 +52,21 @@
     z-index: 2;
     position: absolute;
     bottom: 0;
-    right: 20%;
+    right: -60%;
     animation-name: car-drives-in;
     animation-duration: 3s;
     animation-timing-function: ease-out;
+    animation-delay: 0.8s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+    from{ left: 17%; }
+    to { left: 20%; opacity: 1;}
 }
 
 @keyframes car-drives-in {
-    from{ right: -60%; }
+    from{ right: -60%;}
     to { right: 20%; }
 }
 

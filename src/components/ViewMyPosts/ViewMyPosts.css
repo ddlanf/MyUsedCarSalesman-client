@@ -1,3 +1,11 @@
+.view-my-posts-link{
+  color: black;
+  top: 10%;
+  text-decoration: none;
+  position: relative;
+  top: 8vw
+}
+
 .view-my-posts-post-box{
   margin-top: 12%;
   margin-bottom: 5%;

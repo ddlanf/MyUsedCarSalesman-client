@@ -46,7 +46,8 @@ class ViewPost extends Component {
     render() {
 
         const imageDefault = [{ "src": "", "alt":"" }]
-        const  image =  this.context.images ? this.context.images : imageDefault
+        
+        const  image =  this.context.images.length ? this.context.images : imageDefault
         const  carInfo = this.context.post
        
         return (
@@ -57,8 +58,8 @@ class ViewPost extends Component {
                         <h2 className="view-post-carInfo-price">${carInfo.price}</h2>
                         <img
                                 className="view-post-image"
-                                src={image[0].src}
-                                alt={image[0].alt}
+                                src={image[0].src ? image[0].src : require('../../Utils/myusecarsalesman_pics/notfound.png') }
+                                alt={image[0].alt ? image[0].alt : 'Not Found' }
                         />
                         <h3 className="view-post-carInfo-commission">{carInfo.commission_amount}</h3>
                     </div>
@@ -130,9 +131,9 @@ class ViewPost extends Component {
                             </div>
                         </ul>
                     </div>
-                    <button className="view-post-contact-button"
-                            onClick={this.buttonClicked}
-                            >
+                    <button 
+                        className="view-post-contact-button"
+                        onClick={this.buttonClicked}>
                             Contact Owner
                     </button>
                     {this.state.clicked ? <div className="view-post-user-email">{this.context.email}</div> : ''}

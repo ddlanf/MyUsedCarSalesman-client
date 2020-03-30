@@ -5,7 +5,7 @@ const UserApiService = {
   getUsers() {
     return fetch(`${config.API_ENDPOINT}/users`, {
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,      },
+        'authorization': `bearer ${TokenService.getAdminAuthToken()}`,      },
     })
       .then(res =>
         (!res.ok)
@@ -16,7 +16,7 @@ const UserApiService = {
   getUser(userId) {
     return fetch(`${config.API_ENDPOINT}/users/${userId}`, {
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,      },
+        'authorization': `bearer ${TokenService.getAdminAuthToken()}`,      },
     })
       .then(res =>
         (!res.ok)
@@ -40,7 +40,7 @@ const UserApiService = {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`,   },
+        'authorization': `bearer ${TokenService.getAdminAuthToken()}`,   },
     })
       .then(res =>
         (!res.ok)
@@ -53,7 +53,7 @@ const UserApiService = {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`,   },
+        'authorization': `bearer ${TokenService.getAdminAuthToken()}`,   },
     })
       .then(res =>
         (!res.ok)

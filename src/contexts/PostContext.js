@@ -24,6 +24,7 @@ export class PostProvider extends Component {
   state = {
     posts: [],
     post: [],
+    images: [],
     error: null,
   };
  

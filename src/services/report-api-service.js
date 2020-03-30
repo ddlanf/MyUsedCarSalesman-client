@@ -5,7 +5,7 @@ const ReportApiService = {
     getReports(){
         return fetch(`${config.API_ENDPOINT}/reports`, {
             headers: {
-              'authorization': `bearer ${TokenService.getAuthToken()}`,      },
+              'authorization': `bearer ${TokenService.getAdminAuthToken()}`,      },
         })
         .then(res =>
             (!res.ok)

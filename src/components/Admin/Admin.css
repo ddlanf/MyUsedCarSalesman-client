@@ -6,11 +6,6 @@
    background-color: white;
 }
 
-.admin-background{
-   z-index: 8;
-   height: 2000px;
-   background-color: white;
-}
 
 .admin-header{
    padding-top: 5%;
@@ -56,8 +51,16 @@ th{
    margin-right: auto;
    margin-bottom: 10%;
    display: block;
-   width: 10%;
+   border: black solid 2px;
+   width: 20%;
+   text-align: center;
+   padding-top: 1%;
+   background-color: yellow;
    height: 5vw;
    font-size: 2vw;
+ }
+ 
+ .admin-return:hover{
+   background-color: brown;
  }
  

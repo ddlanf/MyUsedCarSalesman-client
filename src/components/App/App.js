@@ -15,6 +15,7 @@ import NotFoundPage from '../NotFoundPage/NotFoundPage'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
 import './App.css'
+
 export default class App extends Component {
 
   constructor(props){
@@ -26,17 +27,17 @@ export default class App extends Component {
     }
   }
 
+  userLogIn = () => {
+    this.setState({
+      isUserLoggedIn: true
+    })
+  }
+
   userLogOut = () =>{
     TokenService.clearAuthToken()
 
     this.setState({
       isUserLoggedIn: false
-    })
-  }
-
-  userLogIn = () => {
-    this.setState({
-      isUserLoggedIn: true
     })
   }
 
@@ -61,7 +62,7 @@ export default class App extends Component {
     if(TokenService.hasAuthToken()){
       this.verifyJwt()
     }
-    this.interval = setInterval(() => this.verifyJwt(), 180000);
+    this.interval = setInterval(() => this.verifyJwt(), 18000);
   }
 
   componentWillUnmount() {
@@ -84,12 +85,15 @@ export default class App extends Component {
             <Route
               exact 
               path={'/'}
-              render={(props) => <LandingPage {...props} isUserLoggedIn={this.state.isUserLoggedIn} userLogIn={this.userLogIn}/>}
+              render={(props) => 
+                        <LandingPage {...props} 
+                            isUserLoggedIn={this.state.isUserLoggedIn} 
+                            userLogIn={this.userLogIn}/>}
             />
             <Route
               exact 
               path={'/admin'}
-              render={(props) => <Admin {...props} isUserLoggedIn={this.state.isUserLoggedIn} userLogOut={this.userLogOut}/>}
+              component={Admin}
             />
             <Route
               exact 
