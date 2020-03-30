@@ -182,7 +182,7 @@ export default class MakePost extends Component {
                                     onChange={this.handleInputChange}/>
                             </div>
                         </div>
-                        {this.state.buffer ? <p className="make-post-buffer">{this.state.buffer}</p> : (this.state.error ? <p className="make-post-error">{this.state.error}</p> : '')}
+                        {this.state.buffer ? <p className="make-post-buffer">Uploading please wait...</p> : (this.state.error ? <p className="make-post-error">{this.state.error}</p> : '')}
                         <button disabled={this.state.clicked} id="submit" type="submit" className="make-post-submit">Submit</button>
                     </form>
                 </section> 

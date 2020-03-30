@@ -22,5 +22,15 @@
   .landing-page > section{
     padding: 0.2%;
   }
+
+  .landing-page{
+    margin-top: 11%;
+  }
     
+}
+
+@media screen and (min-width: 1400px) {
+  .landing-page{
+    margin-top: 0;
+  }
 }
