@@ -43,34 +43,35 @@ export default class Admin extends Component {
 
     render() {
         return (
-            <div className="admin">
+            <div className="admin-background">
+                <div className="admin">
+                    <h1 className="admin-header">Admin Info</h1>
+                    <section className="admin-info">   
+                        <UserInfo users={this.state.users} updateUsers={this.updateUsers}/>
+                    </section>
 
-                <h1 className="admin-header">Admin Info</h1>
-                <section className="admin-info">   
-                    <UserInfo users={this.state.users} updateUsers={this.updateUsers}/>
-                </section>
+                    <section className="admin-info">
+                        <UserComplaintsAndReports reports={this.state.reports}/>
+                    </section>
 
-                <section className="admin-info">
-                    <UserComplaintsAndReports reports={this.state.reports}/>
-                </section>
-
-                <section className="admin-info">
-                     <UserPosts
-                        users={this.state.users} 
-                        posts={this.state.posts}
-                        updatePosts={this.updatePosts}
-                        />
-                </section>
-                <Link
-                    to={'/view-posts'}
-                    >
-                    <button
-                        className='admin-return'
-                        onClick={this.adminExit}
+                    <section className="admin-info">
+                        <UserPosts
+                            users={this.state.users} 
+                            posts={this.state.posts}
+                            updatePosts={this.updatePosts}
+                            />
+                    </section>
+                    <Link
+                        to={'/view-posts'}
                         >
-                        Return
-                    </button>
-                </Link>
+                        <button
+                            className='admin-return'
+                            onClick={this.adminExit}
+                            >
+                            Return
+                        </button>
+                    </Link>
+                </div>
             </div>
         )
     }

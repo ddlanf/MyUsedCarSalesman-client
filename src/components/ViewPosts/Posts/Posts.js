@@ -17,6 +17,7 @@ export default class Posts extends Component {
                                 to={`/view-posts/${post.id}`}
                                 key={post.id} 
                                 >
+                                <p className="view-posts-car-name">{post.year} {post.make} {post.model}</p>
                                 <div 
                                     className="view-posts-car-image-box">
                                     {<img 
@@ -27,10 +28,22 @@ export default class Posts extends Component {
                                 </div>
                                 <ul
                                     className="view-posts-lists">
-                                    <li>{post.make} {post.model} {post.year}</li>
-                                    <li>Price:  ${post.price}</li>
-                                    <li><span className="break">Commission:</span>{post.commission_amount}</li>
-                                    <li>{post.location}</li>
+                                     <li>
+                                        <p className="view-posts-car-location">
+                                         {post.location}
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p className="view-posts-car-price">
+                                            ${post.price}
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p className="view-posts-car-commission">
+                                            <span className="view-post_commision-title">Commission</span>
+                                            {post.commission_amount}
+                                        </p>
+                                    </li>
                                 </ul>
                             </Link>
                 )

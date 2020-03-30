@@ -1,22 +1,97 @@
 .hero{
-    margin-top: 10%;
+    position: relative;
+    margin-top: 15%;
     height: 48vw;
-    width: 95%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
-    border: black dotted 1px;
-    background-color: white !important;
+    background-color: none !important;
 }
 
-.get-started{
+.landing-page-get-started-link-mobile{
     text-align: center;
-    box-sizing: content-box;
-    margin: 20% auto;
+    margin: auto;
+    padding: 2%;
+    position: absolute;
+    left: 40%;
     width: 20%;
-    height: 3vw;
-    vertical-align: middle;
-    font-size: 2vw;
-    border: 2px solid gray;
-    background-color: gray;
+    text-align: center;
+    font-size: 2.5vw;
+    background-color: #886060;
+    border-radius: 30%;
+    border: 1px solid black;
+    z-index: 8;
 }
-    
+
+.landing-page-get-started-link{
+    display: none;
+}
+
+.landing-page-get-started-link:hover{
+    color: #886060;
+    background-color: yellow;
+}
+
+.salesman{
+    max-height: 550px;
+    height: 45vw;
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    left: 20%;
+}
+
+.yellow-car{
+    max-height: 400px;
+    height: 30vw;
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    animation-name: car-drives-in;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes car-drives-in {
+    from{ right: -60%; }
+    to { right: 20%; }
+}
+
+@keyframes emerge {
+    from { bottom: 8%; }
+    to { bottom: 80%; opacity: 1; }
+}
+
+@media screen and (min-width: 1000px) {
+  
+    .hero{
+        margin-top: 10%;
+    }
+
+    .landing-page-get-started-link-mobile{
+        display: none;
+    }
+
+    .landing-page-get-started-link{
+        display:  block;
+        text-align: center;
+        margin: auto;
+        padding: 2%;
+        z-index: 1;
+        position: absolute;
+        opacity: 0;
+        right: 40%;
+        width: 20%;
+        font-size: 2.5vw;
+        background-color: #886060;
+        border-radius: 30%;
+        animation-name: emerge;
+        animation-duration: 3s;
+        animation-delay: 3s;
+        animation-fill-mode: forwards;
+        transition: 1s;
+        font-family: 'Merriweather Sans', sans-serif;
+        border: 1px solid black;
+    }
+}

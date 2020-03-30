@@ -1,54 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap');
+  
 .view-my-posts-post{
   width: 40%;
-  border: 1px solid black;
-  border-radius: 10%;
+  border-radius: 20px;
   margin: 1%;
   margin-top: 6%;
+  background-color: #DFE32E;
+  border: #999090 1px solid;
+}
+
+.view-my-posts-car-name{
+  text-align: center;
+  width: 100%;
+  font-size: 3vw;
+  margin-bottom: 3%;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: bold;
 }
 
 .view-my-posts-car-image-box{
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 10%;
   height: 35%;
 }
 
 .view-my-posts-car-image{
   width: 100%;
+  border: #999090 1px solid;
 }
 
 .view-my-posts-post > ul{
   list-style: none;
   padding: 0;
-  margin-left: 10%;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+}
+
+.view-my-posts-lists  li{
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+ul .view-my-posts-car-location{
   font-size: 2vw;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  margin-top: -3px;
+  margin-bottom: 0;
+}
+
+ul .view-my-posts-car-price{
+  font-size: 4.5vw;
+  margin: 3%;
+}
+
+ul .view-my-posts-car-commission{
+  font-size: 3.5vw;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin: 1%;
+  margin-bottom: 10%;
+}
+
+.view-my-post_commision-title{
+    display: block;
+    font-family: 'Merriweather Sans', sans-serif;
+    text-decoration: underline;
 }
 
 .view-my-posts-lists > li{
-    width: 90%;
     font-size: 3vw;
+    margin-bottom: 1%;
 }
 
-.view-my-posts-edit{
-  height: 8vw;
-  max-height: 70px;
-  width: 60%;
+.view-my-posts-post{
+  text-decoration: none;
+  color: black;
+}
+
+.view-my-posts-button{
+  width: 50%;
+  max-width: 150px;
+  max-height: 50px;
   font-size: 3vw;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10%;
-  display: block;
+  margin-bottom: 5%;
+}
+
+.view-my-confirm-delete{
+  font-size: 4vw;
+  margin-bottom: 8%;
+  margin-top: 0;
+  color: red;
 }
 
 @media screen and (min-width: 1000px) {
   .view-my-posts-post{
     width: 25%;
-    
+  }
+
+  .view-my-posts-post:hover{
+    background-color: yellow;
+    transition: 0.4s;
+  }
+
+  .view-my-posts-car-name{
+    font-size: 30px;
+    margin-bottom: 3%;
   }
 
   .view-my-posts-lists > li{
-    width: 90%;
+    font-size: 30px;
+  }
+
+  ul .view-my-posts-car-price{
+    font-size: 40px;
+    margin: 0;
+  }
+
+  ul .view-my-posts-car-commission{
+    font-size: 30px;
+  }
+
+  ul .view-my-posts-car-location{
+    font-size: 20px;
+  }
+
+  .view-my-posts-button{
+    font-size: 30px;
+  }
+
+  .view-my-confirm-delete{
     font-size: 30px;
   }
 }

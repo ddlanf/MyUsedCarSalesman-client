@@ -7,11 +7,28 @@ export default class Hero extends Component {
         return (
             <div className="hero">
                  <Link
-                    className="landing-page-link"
+                    className="landing-page-get-started-link-mobile"
                     to='./view-posts'
                     >
-                    <div className="get-started">Get Started</div>
+                    Get Started
                  </Link>
+                 
+                 <Link
+                    className="landing-page-get-started-link"
+                    to='./view-posts'
+                    >
+                    Get Started
+                 </Link>
+                 <img 
+                        className="salesman"
+                        src={require('../../../Utils/myusecarsalesman_pics/repairman.png')}
+                        alt="salesman"
+                />
+                 <img 
+                        className="yellow-car"
+                        src={require('../../../Utils/myusecarsalesman_pics/car-303614_1280_0.png')}
+                        alt="yellow-car"
+                />
             </div>
         )
     }

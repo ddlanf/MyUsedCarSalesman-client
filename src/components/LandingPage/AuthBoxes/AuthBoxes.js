@@ -49,7 +49,7 @@ export default class AuthBoxes extends Component {
                         <form
                                 onSubmit={this.loginUser}
                             >
-                            <label name="user-name" className="mini-login-label">User Name/Email</label>
+                            <label name="user-name" className="mini-login-label">User Name</label>
                             <input 
                                 type="text" 
                                 className="mini-login-input"
@@ -68,29 +68,38 @@ export default class AuthBoxes extends Component {
                                 <span className="auth-box-break">
                                     <Link
                                         to='/register'
-                                        className="landing-page-link"
+                                        className="mini-login-link"
                                         >
-                                        Register your account
+                                        Register
                                     </Link>
                                 </span>
                             </p>
                             <p className="mini-login-admin">
                                 <Link
                                     to='/admin-login'
-                                    className="landing-page-link"
+                                    className="mini-login-link"
                                     >
                                 Admin Login
                                 </Link>
                             </p>
+                            
                     </div>
                     <div className="additional-info">
                         <p>MyUsedCarSalesman</p>
                         <p>All rights reserved</p>
-                        <p>Created on xx/xx/20xx</p>
+                        <p>Created on 04/01/2020</p>
                         <p>By Daniel Laufenberg</p>
-                        <p>Github Link LinkedIn Link</p>
-                    </div>
-                </section>  
+                        <p ><a className="portfolio-link" href="https://ddlanf.github.io/Portfolio">Portfolio</a></p>
+                        <div className="image-link-container"> 
+                            <a  href="https://github.com/ddlanf">
+                                <img className="github" alt="github" target="_blank" src={require('../../../Utils/myusecarsalesman_pics/github.png')} />
+                            </a>
+                            <a  href="https://www.linkedin.com/in/daniel-laufenberg/">
+                                <img className="linkedIn" alt="linkedIn" target="_blank" src={require('../../../Utils/myusecarsalesman_pics/linkedIn.png')} />
+                            </a> 
+                        </div>        
+                   </div>  
+                </section>
             </>
         )
     }

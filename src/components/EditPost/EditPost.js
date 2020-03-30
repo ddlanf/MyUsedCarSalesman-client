@@ -145,11 +145,11 @@ class EditPost extends Component {
     render() {
         return (
             <div className="edit-post">
-                <h1 className="edit-post-heading">Edit Post</h1>
                 <section className="edit-post-form-box">
                     <form className="edit-post-form"
                         onSubmit={this.editPost}
                         >
+                        <h1 className="edit-post-heading">Edit Post</h1>
                         <div className="edit-post-input-box">
                             <div className="edit-post-left">
                                 <label name="edit" className="edit-post-label">Make</label>
@@ -173,7 +173,7 @@ class EditPost extends Component {
                                     name="year"
                                     defaultValue={this.state.prevPost.year} 
                                     onChange={this.handleInputChange}/>
-                                <label name="mileage" className="edit-post-input">Mileage</label>
+                                <label name="mileage" className="edit-post-label">Mileage</label>
                                 <input 
                                     type="number" 
                                     className="edit-post-input"
@@ -224,8 +224,7 @@ class EditPost extends Component {
                                     onChange={this.handleInputChange}/>
                             </div>
                         </div>
-                        {<p className="edit-post-error">{this.state.buffer ? '' : this.state.error}</p>}
-                        {<p className="edit-post-buffer">{this.state.buffer ? 'Uploading please wait...' : ''}</p>}
+                        {this.state.buffer ? <p className="make-post-buffer">{this.state.buffer}</p> : (this.state.error ? <p className="make-post-error">{this.state.error}</p> : '')}
                         <button disabled={this.state.clicked} id="submit" type="submit" className="edit-post-submit">Submit</button>
                     </form>
                 </section> 

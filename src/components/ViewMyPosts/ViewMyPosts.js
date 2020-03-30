@@ -24,7 +24,7 @@ export default class ViewMyPosts extends Component {
     render() {
         return (
             <>
-                <section className="view-posts-post-box">
+                <section className="view-my-posts-post-box">
                     <MyPosts
                         posts={this.context.posts}
                         images={this.context.images}

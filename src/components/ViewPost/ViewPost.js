@@ -52,80 +52,88 @@ class ViewPost extends Component {
         return (
             <>
                 <section className="view-post-box">
-                    <h1 className="view-post-carInfo-name">{carInfo.make} {carInfo.model} {carInfo.year} </h1>
-                    <h2 className="view-post-carInfo-price">${carInfo.price}</h2>
-                    <img
-                            className="view-post-image"
-                            src={image[0].src}
-                            alt={image[0].alt}
-                    />
-                    <h3 className="view-post-carInfo-commission">{carInfo.commission_amount}</h3>
-                    <ul className="view-post-info">
-                        <li>Make:</li>
-                        <li>
-                            <div className="view-post-text-box">
-                                {carInfo.make}
+                    <div className="view-post-desk-top-view-box">
+                        <h1 className="view-post-carInfo-name"> {carInfo.year} {carInfo.make} {carInfo.model}</h1>
+                        <h2 className="view-post-carInfo-price">${carInfo.price}</h2>
+                        <img
+                                className="view-post-image"
+                                src={image[0].src}
+                                alt={image[0].alt}
+                        />
+                        <h3 className="view-post-carInfo-commission">{carInfo.commission_amount}</h3>
+                    </div>
+                    <div className="view-post-desk-top-view-box-two">
+                        <ul className="view-post-info">
+                            <div className="view-post-desk-top-view-list-box">
+                                <li><span className="view-post-text-box-label">Make</span></li>
+                                <li>
+                                    <div className="view-post-text-box">
+                                        {carInfo.make}
+                                    </div>
+                                </li>
+                                <li><span className="view-post-text-box-label">Model</span></li>
+                                <li>
+                                    <div className="view-post-text-box">
+                                        {carInfo.model}
+                                    </div>
+                                </li>            
+                                <li><span className="view-post-text-box-label">Year</span></li>
+                                <li>
+                                    <div className="view-post-text-box">
+                                        {carInfo.year}
+                                    </div>
+                                </li>            
+                                <li><span className="view-post-text-box-label">Mileage</span></li>
+                                <li>
+                                    <div className="view-post-text-box">
+                                        {carInfo.mileage}
+                                    </div>
+                                </li>            
+                                <li><span className="view-post-text-box-label">Description</span></li>
+                                <li>
+                                    <div className="view-post-text-box description">
+                                        {carInfo.description}
+                                    </div>
+                                </li>         
+                            </div>   
+                            <div className="view-post-desk-top-view-list-box-two">
+                                <li><span className="view-post-text-box-label">Price</span></li>
+                                <li>
+                                    <div className="view-post-text-box">
+                                        ${carInfo.price}
+                                    </div>
+                                </li>
+                                <li><span className="view-post-text-box-label">Commission</span></li>
+                                <li>
+                                    <div className="view-post-text-box">
+                                        {carInfo.commission_amount}
+                                    </div>
+                                </li>
+                                <li><span className="view-post-text-box-label">Location</span></li>
+                                <li>
+                                    <div className="view-post-text-box">
+                                        {carInfo.location}
+                                    </div>
+                                </li>
+                                <li><span className="view-post-text-box-label">Other terms and conditions</span></li>
+                                <li>
+                                    <div className="view-post-text-box terms-cond">
+                                        {carInfo.other_terms_and_conditions}
+                                    </div>
+                                </li>
+                                <li><span className="view-post-text-box-label">Posted By</span></li>
+                                <li>
+                                    <div className="view-post-text-box">
+                                        {carInfo.user_name}  
+                                    </div>
+                                </li>
                             </div>
-                        </li>
-                        <li>Model:</li>
-                        <li>
-                            <div className="view-post-text-box">
-                                {carInfo.model}
-                            </div>
-                        </li>            
-                        <li>Year:</li>
-                        <li>
-                            <div className="view-post-text-box">
-                                {carInfo.year}
-                            </div>
-                        </li>            
-                        <li>Mileage:</li>
-                        <li>
-                            <div className="view-post-text-box">
-                                {carInfo.mileage}
-                            </div>
-                        </li>            
-                        <li>Description:</li>
-                        <li>
-                            <div className="view-post-text-box description">
-                                {carInfo.description}
-                            </div>
-                        </li>            
-                        <li>Price:</li>
-                        <li>
-                            <div className="view-post-text-box">
-                                ${carInfo.price}
-                            </div>
-                        </li>
-                        <li>Commission:</li>
-                        <li>
-                            <div className="view-post-text-box">
-                                {carInfo.commission_amount}
-                            </div>
-                        </li>
-                        <li>Location:</li>
-                        <li>
-                            <div className="view-post-text-box">
-                                {carInfo.location}
-                            </div>
-                        </li>
-                        <li>Other terms and conditions:</li>
-                        <li>
-                            <div className="view-post-text-box terms-cond">
-                                {carInfo.other_terms_and_conditions}
-                            </div>
-                        </li>
-                        <li>Posted By:</li>
-                        <li>
-                            <div className="view-post-text-box">
-                                {carInfo.user_name}  
-                            </div>
-                        </li>
-                    </ul>
+                        </ul>
+                    </div>
                     <button className="view-post-contact-button"
-                        onClick={this.buttonClicked}
-                        >
-                        Contact Owner
+                            onClick={this.buttonClicked}
+                            >
+                            Contact Owner
                     </button>
                     {this.state.clicked ? <div className="view-post-user-email">{this.context.email}</div> : ''}
                 </section>

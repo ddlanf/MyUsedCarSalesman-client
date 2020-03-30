@@ -107,14 +107,18 @@ export default class MakePost extends Component {
         
     }
 
+    componentDidMount(){
+        this.setState({ buffer: false, error: '' })
+    }
+
     render() {
         return (
             <div className="make-post">
-                <h1 className="make-post-heading">Create Post</h1>
                 <section className="make-post-form-box">
                     <form className="make-post-form"
                         onSubmit={this.createPost}
                         >
+                         <h1 className="make-post-heading">Create Post</h1>
                         <div className="make-post-input-box">
                             <div className="make-post-left">
                                 <label name="make" className="make-post-label">Make</label>
@@ -135,7 +139,7 @@ export default class MakePost extends Component {
                                     className="make-post-input"
                                     name="year"
                                     onChange={this.handleInputChange}/>
-                                <label name="mileage" className="make-post-input">Mileage</label>
+                                <label name="mileage" className="make-post-label">Mileage</label>
                                 <input 
                                     type="number" 
                                     className="make-post-input"
@@ -178,8 +182,7 @@ export default class MakePost extends Component {
                                     onChange={this.handleInputChange}/>
                             </div>
                         </div>
-                        {<p className="make-post-error">{this.state.buffer ? '' : this.state.error}</p>}
-                        {<p className="make-post-buffer">{this.state.buffer ? 'Uploading please wait...' : ''}</p>}
+                        {this.state.buffer ? <p className="make-post-buffer">{this.state.buffer}</p> : (this.state.error ? <p className="make-post-error">{this.state.error}</p> : '')}
                         <button disabled={this.state.clicked} id="submit" type="submit" className="make-post-submit">Submit</button>
                     </form>
                 </section> 

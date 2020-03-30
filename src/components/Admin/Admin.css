@@ -6,6 +6,12 @@
    background-color: white;
 }
 
+.admin-background{
+   z-index: 8;
+   height: 2000px;
+   background-color: white;
+}
+
 .admin-header{
    padding-top: 5%;
    font-size: 5vw;

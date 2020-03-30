@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import PostContext from '../../contexts/PostContext'
 import './Nav.css'
 
-
 export default class Nav extends Component {
 
     static contextType = PostContext
@@ -58,13 +57,14 @@ export default class Nav extends Component {
                         className="left-nav"    
                         >
                         <Link
-                            className='nav-link'
+                            className='nav-link main'
                             to='/view-posts'
                             >
                             MyUsedCarSalesman
                         </Link>
                     </div>
-                    {this.props.isUserLoggedIn ? this.rendorLoginNavBar() : this.rendorLogOutNavBar()}
+                    {this.props.isUserAtLoginOrRegister ?
+                        '' : this.props.isUserLoggedIn ? this.rendorLoginNavBar() : this.rendorLogOutNavBar()}
                 </nav>
         )
     }

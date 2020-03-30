@@ -14,6 +14,7 @@ import ViewPosts from '../ViewPosts/ViewPosts'
 import NotFoundPage from '../NotFoundPage/NotFoundPage'
 import TokenService from '../../services/token-service'
 import AuthApiService from '../../services/auth-api-service'
+import './App.css'
 export default class App extends Component {
 
   constructor(props){
@@ -21,6 +22,7 @@ export default class App extends Component {
 
     this.state = {
       isUserLoggedIn: TokenService.hasAuthToken(),
+      isUserAtLoginOrRegister: false
     }
   }
 
@@ -36,6 +38,14 @@ export default class App extends Component {
     this.setState({
       isUserLoggedIn: true
     })
+  }
+
+  userIsAtLoginOrRegister = () =>{
+    this.setState({ isUserAtLoginOrRegister: true})
+  }
+
+  userIsNotAtLoginOrRegister = () =>{
+    this.setState({ isUserAtLoginOrRegister: false})
   }
 
   verifyJwt = () => {
@@ -66,6 +76,7 @@ export default class App extends Component {
             <Nav 
               userLogOut={this.userLogOut}
               isUserLoggedIn={this.state.isUserLoggedIn}
+              isUserAtLoginOrRegister={this.state.isUserAtLoginOrRegister}
             />
         </header>
         <main className='App_main'>
@@ -88,12 +99,26 @@ export default class App extends Component {
             <Route
               exact 
               path={'/login'}
-              render={(props) => <Login {...props} isUserLoggedIn={this.state.isUserLoggedIn} userLogIn={this.userLogIn}/>}
+              render={(props) => 
+                        <Login {...props} 
+                          isUserLoggedIn={this.state.isUserLoggedIn} 
+                          userLogIn={this.userLogIn}
+                          userIsAtLoginOrRegister={this.userIsAtLoginOrRegister}
+                          userIsNotAtLoginOrRegister={this.userIsNotAtLoginOrRegister}
+                          isUserAtLoginOrRegister={this.state.isUserAtLoginOrRegister}
+                        />}
             />
             <Route
               exact 
               path={'/register'}
-              render={(props) => <Register {...props} isUserLoggedIn={this.state.isUserLoggedIn} userLogIn={this.userLogIn}/>}
+              render={(props) => 
+                        <Register {...props} 
+                          isUserLoggedIn={this.state.isUserLoggedIn} 
+                          userLogIn={this.userLogIn}
+                          userIsAtLoginOrRegister={this.userIsAtLoginOrRegister}
+                          userIsNotAtLoginOrRegister={this.userIsNotAtLoginOrRegister}
+                          isUserAtLoginOrRegister={this.state.isUserAtLoginOrRegister}
+                        />}
             />
             <Route
               exact 
@@ -125,6 +150,9 @@ export default class App extends Component {
             />
           </Switch>
         </main>
+        <footer className='App_footer'>
+             © 2020 MyUsedCarSalesman
+        </footer>
       </div>
     )
   }

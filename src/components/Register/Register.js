@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Register.css'
+import { Link } from 'react-router-dom'
 import AuthApiService from '../../services/auth-api-service'
 export default class Register extends Component {
 
@@ -66,6 +67,15 @@ export default class Register extends Component {
 
     }
 
+    componentDidMount(){
+        this.setState({ error: '' })
+        this.props.userIsAtLoginOrRegister()
+    }
+
+    componentWillUnmount(){
+        this.props.userIsNotAtLoginOrRegister()
+    }
+
     render() {
         return (
             <>
@@ -75,40 +85,56 @@ export default class Register extends Component {
                     onSubmit={this.registerUser}
                     >
                     <label name="first-name" className="register-label">First Name</label>
+                    {this.state.error ? (this.state.error.toLowerCase().includes("last name") ? <p className='register-error'>{this.state.error}</p> : '') : ''}
                     <input 
                         name="first_name" 
                         type="text" 
                         className="register-input"
                         onChange={this.handleInputChange}/>
                     <label name="last-name" className="register-label">Last Name</label>
+                    {this.state.error ? (this.state.error.toLowerCase().includes("last name")  ? <p className='register-error'>{this.state.error}</p> : '') : ''}
                     <input 
                         name="last_name" 
                         type="text" 
                         className="register-input"
                         onChange={this.handleInputChange}/>
-                    <label name="user-name" className="register-label">User Name</label>
+                    <label name="user-name" className="register-label">Username</label>
+                    {this.state.error ? (this.state.error.toLowerCase().includes("user") ? <p className='register-error'>{this.state.error}</p> : '') : ''}
                     <input 
                         name="user_name" 
                         type="text" 
                         className="register-input"
                         onChange={this.handleInputChange}/>
                     <label name="password" className="register-label">Password</label>
+                    {this.state.error ? (this.state.error.toLowerCase().includes("password") ? <p className='register-error'>{this.state.error}</p> : '') : ''}
                     <input 
                         name="password" 
                         type="password" 
                         className="register-input"
                         onChange={this.handleInputChange}/>
                     <label name="email" className="register-label">Email</label>
+                    {this.state.error ? (this.state.error.toLowerCase().includes("email") ? <p className='register-error'>{this.state.error}</p> : '') : ''}
                     <input 
                         name="email" 
                         type="text" 
                         className="register-input"
                         onChange={this.handleInputChange}/>
-                    <p className="register-error">{this.state.error}</p>
+                    {this.state.error ? (this.state.error.toLowerCase().includes("space") ? <p className='register-error'>{this.state.error}</p> : '') : ''}
                     <input 
                         type="submit" 
                         className="register-submit"/>
                 </form>
+                <h3 className="register-login-heading">
+                        Returning User?
+                        <span className="break">
+                            <Link
+                                className="register-login-link"
+                                to='/login'
+                                >
+                                Log In
+                            </Link>
+                       </span>
+                </h3>
             </div>
            
             </>

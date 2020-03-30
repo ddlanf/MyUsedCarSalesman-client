@@ -1,77 +1,84 @@
-.make-post-heading{
+
+.make-post{
     margin-top: 11%;
-    font-size: 4vw;
+}
+
+.make-post-heading{
+    font-size: 7vw;
     text-align: center;
+    margin-top: 5%;
+    margin-bottom: 6%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 0;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 .make-post-form{
-    border: 1px solid  black;
-    width: 85%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10%;
     padding-bottom: 2%;
     position: relative;
+    background-color: #EAEDEC;
+    border: #999090 solid 2px;
+    border-radius: 10%;
 }
 
 .make-post-input-box{
-    width: 90%;
-    padding: 0;
-    min-height: 200px;
-    max-height: 950px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    display: block;
-    margin-bottom: 10%;
-    position: relative;
+    padding-left: 8%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: stretch;
 }
 
 
 .make-post-right, .make-post-left{
-    width: 50%;
+    width: 100%;
+    min-width: 250px;
     margin: 0;
-    display: inline-block;
-    position: relative;
-    vertical-align: top;
 }
 
-.make-post-label, .make-post-input, textarea{
-    font-size: 2vw;
+
+textarea{
+    margin-left: -5%;
     position: relative;
-    top: 30px;
-    left: 5%;
-    display: block;
-    width: 50%;
+    top: -0.2%;
 }
 
 .make-post-label{
     width: 100%;
+    display: block;
+    font-size: 4vw;
 }
 
 .make-post-input{
+    display: block;
     margin-bottom: 3%;
+    width: 30%;
+    font-size: 4vw;
 }
-
- .make-post-description{
-    height: 23vw;
-    width: 85%;
- }
 
  .make-post-commission{
-    width: 80%;
+    width: 70%;
 }
 
+.make-post-description{
+    height: 20vw;
+    width: 70%;
+ }
+
  .make-post-terms-and-cond{
-    width: 85%;
+    width: 70%;
     height: 20vw;
  }
 
-.make-post-img{
-    margin-top: 3%;
-    width: 80%;
+.make-post-image{
+    width: 55%;
     font-size: 2vw;
  }
 
@@ -79,18 +86,90 @@
     display: block;
     height: 5vw;
     width: 40%;
+    height: 10vw;
+    max-height: 60px;
+    max-width: 300px;
+    border-radius: 10%;
+    color: black;
+    background-color: #999090;
+    border: #999090 solid 2px;
+    margin-top: 4%;
+    margin-bottom: 2%;
     margin-left: auto;
     margin-right: auto;
-    font-size: 2vw;
+    font-size: 5vw;
+}
+
+.make-post-submit:hover{
+    background-color: #645b5b;
+    border: #645b5b solid 2px;
 }
 
 .make-post-error, .make-post-buffer{
-    color: red;
-    display: block;
-    margin-bottom: 1%;
-    margin-top: 0;
-    width: 100%;
-    text-align: center;
     font-size: 3vw;
+    text-align: center;
+    border: 1px solid #999090;
+    background-color: #DFE32E;
+    width: 50%;
+    margin-top: 0;
+    margin-bottom: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: auto;
 }
 
+.make-post-error{
+    color: red;
+}
+
+.make-post-buffer{
+    color: black;
+}
+
+@media screen and (min-width: 1000px) {
+
+    .make-post-heading{
+        font-size: 60px;
+        margin-bottom: 0;
+        margin-top: 4%;
+    }
+
+    .make-post-right, .make-post-left{
+        width: 50%;
+    }
+
+    .make-post-input-box{
+        width: 100%;
+        padding-left: 10%;
+    }
+
+    .make-post-label{
+        font-size: 35px;
+    }
+    
+    .make-post-input{
+        width: 50%;
+        font-size: 35px;
+    }
+
+    .make-post-commission{
+        width: 70%;
+    }
+    
+    .make-post-description{
+        width: 70%;
+     }
+    
+     .make-post-terms-and-cond{
+        width: 70%;
+     }
+    
+    .make-post-image{
+        width: 50%;
+     }
+
+     .make-post-submit{
+        margin-top: 2%;
+        font-size: 40px;
+    }
+}

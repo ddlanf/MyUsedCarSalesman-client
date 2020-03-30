@@ -1,35 +1,53 @@
 .heading-box{
-  margin-top: 0;
-  margin-bottom: 5vw;
-  width: 85%;
+  margin-top: 1vw;
+  margin-bottom: 3vw;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   display: block;
 }
 
+.heading-image{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-height: 180px;
+  height: 18vw;
+}
+
+.cash{
+  margin-top: -3%;
+}
+
 .header-main{
-  font-size: 6vw;
-  margin: 0;
+  font-size: 4.8vw;
 }
 
 .sub-text{
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  width: 95%;
-  font-size: 3vw;
+  width: 85%;
 }
 
 .sub-text > p{
-  font-size: 3vw;
+  font-size: 3.3vw;
   line-height: normal;
+  text-align: center;
 }
 
-.break{
+.new-para{
+  display: block;
+  margin-bottom: 2%;
+  padding: 0;
+}
+
+.landingpage-break{
   display: block;
   margin: 0;
-  padding: 0;
 }
 
 @media screen and (min-width: 1000px) {
@@ -40,5 +58,9 @@
     
   .sub-text > p{
     font-size: 30px;
+  }
+
+  .cash{
+    margin-top: -30px;
   }
 }

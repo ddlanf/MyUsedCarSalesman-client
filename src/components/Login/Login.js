@@ -25,7 +25,7 @@ export default class Login extends Component {
         let validUser = true
         for(let [key, value] of Object.entries(returningUser)){
             if(value == null || value === ''){
-               this.context.setError(`please enter ${key.replace('_', ' ')}`)
+               this.context.setError(`Please enter ${key.replace('_', ' ')}`)
                validUser = false
             }
         }
@@ -52,6 +52,14 @@ export default class Login extends Component {
         })
     }
 
+    componentDidMount(){
+        this.context.setError('')
+        this.props.userIsAtLoginOrRegister()
+    }
+
+    componentWillUnmount(){
+        this.props.userIsNotAtLoginOrRegister()
+    }
 
     render() {
         return (
@@ -59,10 +67,11 @@ export default class Login extends Component {
                     <div className="login-header-box">
                      <h1 className="login-header">Log in</h1>
                     </div>
+                    {this.context.error ? <p className='login-error'>{this.context.error}</p> : ''}
                     <form
                         onSubmit={this.loginUser}
                         >
-                        <label name="user-name" className="login-label">User Name/Email</label>
+                        <label name="user-name" className="login-label">User Name</label>
                         <input 
                             type="text" 
                             className="login-input"
@@ -76,25 +85,25 @@ export default class Login extends Component {
                             onChange={this.handleInputChange}/>
                         <input type="submit" className="login-submit"></input>
                     </form>
-                    {<p className='login-error'>{this.context.error}</p>}
-                    <p>New to MyUsedCarSalesman?
+                    <h3 className="login-register-heading">
+                        New to MyUsedCarSalesman?
                         <span className="break">
                             <Link
-                                className="login-link"
+                                className="register-login-link"
                                 to='/register'
                                 >
-                                Register your account
+                                Register
                             </Link>
                        </span>
-                    </p>
-                    <p>
+                    </h3>
+                    <h3 className="login-register-heading">
                         <Link
-                            className="login-link"
+                            className="login-register-link"
                             to='/admin-login'
                             >
                          Admin Login
                         </Link>
-                    </p>
+                    </h3>
                 </div>
         )
     }

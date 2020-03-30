@@ -8,11 +8,24 @@ export default class MyPosts extends Component {
 
     static contextType = PostContext
 
+    state = { clicked : [] }
+
+    deleteClicked = (id) =>{
+        let cloneArray = this.state.clicked
+        cloneArray.push(id)
+        this.setState({ clicked : cloneArray })
+        console.log(cloneArray)
+    }
+
     deletePost = (postId) => {
         this.context.clearError()
         PostApiService.deletePost(postId)
             .then(this.context.deletePost(postId))
             .catch(this.context.setError)
+    }
+
+    componentDidMount(){
+        this.setState({ clicked: [] })
     }
 
     rendorPosts(){
@@ -23,48 +36,74 @@ export default class MyPosts extends Component {
         const posts = userPosts.map(post => {
                 let thumbNail = images.filter(image => image.post_id === post.id)[0] || thumbNailDefault;
                 return (
-                            <div
-                                className="view-my-posts-post"
-                                to={`/view-my-posts/${post.id}`}
-                                key={post.id} 
-                                >
-                                <div 
-                                    className="view-my-posts-car-image-box">
-                                    {<img 
-                                        className="view-my-posts-car-image"
-                                        src={thumbNail.src}
-                                        alt={thumbNail.alt}
-                                    />}
-                                </div>
-                                <ul
-                                    className="view-my-posts-lists">
-                                    <li>{post.make} {post.model} {post.year}</li>
-                                    <li>Price:  ${post.price}</li>
-                                    <li><span className="break">Commission:</span>{post.commission_amount}</li>
-                                    <li>{post.location}</li>
-                                    <li>
-                                        <Link
-                                            className="view-my-post-link"
-                                            to={`./edit-post/${post.id}`}
-                                            >
-                                            <button className="view-my-posts-edit">Edit</button>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <button 
-                                            className="view-my-posts-edit"
-                                            onClick={() => this.deletePost(post.id)}
-                                            >
-                                            Delete
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
+                    <div
+                        className="view-my-posts-post"
+                        to={`/view-my-posts/${post.id}`}
+                            key={post.id} 
+                        >
+                        <p className="view-my-posts-car-name">{post.year} {post.make} {post.model}</p>
+                        <div 
+                            className="view-my-posts-car-image-box">
+                            {<img 
+                                className="view-my-posts-car-image"
+                                src={thumbNail.src}
+                                alt={thumbNail.alt}
+                            />}
+                        </div>
+                        <ul
+                            className="view-my-posts-lists">
+                            <li>
+                                <p className="view-my-posts-car-location">
+                                {post.location}
+                                </p>
+                            </li>
+                            <li>
+                                <p className="view-my-posts-car-price">
+                                    ${post.price}
+                                </p>
+                            </li>
+                            <li>
+                                <p className="view-my-posts-car-commission">
+                                    <span className="view-my-post_commision-title">Commission</span>
+                                    {post.commission_amount}
+                                </p>
+                            </li>
+                            <li>
+                                <Link
+                                    className="view-my-post-link"
+                                    to={`./edit-post/${post.id}`}
+                                    >
+                                           <button className="view-my-posts-button">Edit</button>
+                                </Link>
+                            </li>
+                            <li>
+                                {this.state.clicked.includes(post.id) ?
+                                <>
+                                <button 
+                                    className="view-my-posts-button"
+                                    onClick={() => this.deletePost(post.id)}
+                                    >
+                                    Delete
+                                </button>
+                                <p className="view-my-confirm-delete">Are you sure?</p>
+                                </>
+                                :
+                                <button 
+                                    className="view-my-posts-button"
+                                    onClick={() => this.deleteClicked(post.id)}
+                                    >
+                                    Delete
+                                </button>}
+                            </li>
+                        </ul>
+                    </div>
                 )
             })
 
         return posts;
     }
+
+    
 
     render() {
         return (
@@ -79,4 +118,5 @@ MyPosts.defaultProps = {
     posts: [],
     images: []
   };
+
 

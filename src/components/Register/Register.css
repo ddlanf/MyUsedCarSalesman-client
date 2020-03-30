@@ -3,10 +3,12 @@
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 10vw;
-    width: 90%;
+    width: 85%;
     max-width: 500px;
     text-align: center;
-    border: black solid 2px;
+    border: #999090 solid 2px;
+    background-color: #EAEDEC;
+    border-radius: 10%;
 }
 
 .register-box > *{
@@ -16,15 +18,15 @@
 .register-header-box{
     text-align: center;
     position: relative;
+    margin-bottom: 2%;
 }
 
 .register-header{
-    display: inline;
-    font-size: 10vw;
-}
-
-.register-form{
+    display: block;
+    font-size: 8vw;
     margin-top: 5%;
+    margin-bottom: 3%;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 .register-label, .register-input{
@@ -35,38 +37,79 @@
 }
 
 .register-label{
-    font-size: 2vw;
+    margin-bottom: 1%;
+    font-size: 5vw;
 }
 
 .register-input{
     margin-bottom: 5%;
     margin-top: 0;
-    height: 5vw;
-    max-height: 40px;
     width: 70%;
-    font-size: 4.5vw;
+    height: 5vw;
+    max-height: 45px;
+    font-size: 4vw;
 }
 
 .register-label{
     margin-bottom: 2%;
-    font-size: 5vw;
+    font-size: 5.5vw;
 }
   
 .register-submit{
-    margin: 8% auto;
+    margin: 2% auto;
+    margin-bottom: 5%;
     width: 35%;
     height: 8vw;
     max-height: 55px;
     vertical-align: middle;
-    font-size: 3vw;
+    font-size: 4vw;
+    border-radius: 10%;
+    border: #999090 solid 1px;
+    background-color: white;
+}
+
+.register-submit:hover{
+    background-color: #999090;
+    transition: 0.3s;
+}
+
+.register-submit:active{
+    border-top: grey solid 2px;
+    background-color: #999090;
+    padding-top: 0.5%;
 }
 
 
 .register-error{
     color: red;
-    font-size: 22px;
-    margin-top: 0;
+    font-size: 4vw;
+    margin: 0;
+    margin-bottom: 5%;
+    border: 1px solid #999090;
+    background-color: #DFE32E;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.register-login-heading{
+    font-size: 5vw;
+    width: 90%; 
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.register-login-link{
+    display: block;
+    margin-top: 2%;
+    color: blue;
+}
+
+.register-login-link:hover{
+    text-decoration: underline;
+}
+
   
 @media screen and (min-width: 1000px) {
   
@@ -81,4 +124,12 @@
       .register-label, .register-input{
         font-size: 30px;
       }
+
+      .register-error{
+        font-size: 30px;
+      }
+
+      .register-submit{
+          font-size: 30px;
+      }  
 }

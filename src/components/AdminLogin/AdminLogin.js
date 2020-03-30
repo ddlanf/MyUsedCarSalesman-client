@@ -35,14 +35,19 @@ export default class AdminLogin extends Component {
         })
     }
 
+    componentDidMount(){
+        this.setState({ error: '' })
+    }
+
     render() {
         return (
             <div className="admin-login-box">
                 <h1 className="admin-login-header">Admin Log in</h1>
+                {this.state.error ? <p className='admin-login-error'>{this.state.error}</p> : ''}
                 <form className="admin-login-form"
                     onSubmit={this.loginAdmin}
                     >
-                     <label name="user-name" className="login-label">User Name/Email</label>
+                     <label name="user-name" className="login-label">Admin Name</label>
                         <input 
                             type="text" 
                             className="admin-login-input"
@@ -56,7 +61,6 @@ export default class AdminLogin extends Component {
                             onChange={this.handleInputChange}/>
                     <input type="submit" className="admin-login-submit"></input>
                 </form>
-                {<p className='admin-error'>{this.state.error}</p>}
                 <Link
                     to="/login"
                     className="go-back"

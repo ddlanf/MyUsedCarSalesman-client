@@ -1,11 +1,13 @@
+
 .view-post-box{
   margin-top: 15%;
   margin-bottom: 10%;
-  padding-top: 3%;
-  width: 85%;
+  padding-top: 2%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   border: 1px solid black;
+  background-color: #DFE32E;
   border-radius: 5%;
 }
 
@@ -23,6 +25,7 @@
   margin-right: auto;
   width: 80%;
   max-width: 800px;
+  border: #999090 1px solid;
 }
 
 .view-post-carInfo-name, .view-post-carInfo-price, .view-post-carInfo-commission{
@@ -31,71 +34,194 @@
   margin-left: auto;
   margin-right: auto;
   width: 70%;
-  margin-top: 3%;
+  font-family: 'Merriweather Sans', sans-serif;
 }
 
 .view-post-carInfo-name{
-  font-size: 6vw;
+  font-size: 7vw;
+  margin-top: 3%;
+  margin-bottom: 0;
 }
 
-.view-post-carInfo-price, .view-post-carInfo-commission{
+.view-post-carInfo-price{
+  font-size: 8vw;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.view-post-carInfo-commission{
   font-size: 5vw;
 }
 
 .view-post-info{
   list-style: none;
-  font-size:  3vw;
+  font-size:  4vw;
   padding-left: 10%;
 }
 
+.view-post-text-box-label{
+  font-weight: 600;
+  font-size: 4.5vw;
+}
+
 .view-post-text-box{
-  border: 0.5px solid black;
+  border: #999090 1px solid;
+  background-color: #EAEDEC;
   width: 85%;
+  font-size: 4.5vw;
   padding-left: 1%;
+  margin-bottom: 2%;
 }
 
 .view-post-text-box.description, .view-post-text-box.terms-cond{
-  max-height: 6rem;
-  overflow-y: scroll;
+  max-height: 300px;
+  height: 35vw;
+  overflow-y: auto;
 }
 
 .view-post-contact-button{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2%;
-  font-size: 2vw;
+  margin-bottom: 5%;
+  font-size: 3vw;
   width: 30%;
-  height: 5vw;
+  height: 10vw;
+  border-radius: 10%;
+  border: #999090 1px solid;
+  background-color: #EAEDEC;
+}
+
+.view-post-contact-button:hover{
+  background-color: #999090;
+  transition: 1s;
+}
+
+.view-post-contact-button:visited{
+  background-color: #999090;
 }
 
 .view-post-user-email{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0;
   margin-bottom: 2%;
   text-align: center;
-  font-size: 2vw;
-  width: 40%;
-  border: 1px solid black;
+  font-size: 4vw;
+  width: 50%;
+  border: #999090 1px solid;
+  background-color: #EAEDEC;
+  overflow-x: auto;
 }
 
 @media screen and (min-width: 1000px) {
 
   .view-post-box{
-    margin-top: 9%;
+    margin-top: 10vw;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .view-post-text-box{
+    width: 50%;
+    font-size: 1.5vw;
+    padding-left: 1%;
+    margin-bottom: 2%;
+  }
+
+  .view-post-text-box-label{
+    font-size: 1.5vw;
   }
 
   .view-post-carInfo-name{
-    margin-top: 0;
-    font-size: 45px;
-  }
-  .view-post-carInfo-price, .view-post-carInfo-commission{
-    font-size: 40px;
-  }  
+    font-size: 3vw;
+  } 
 
-.view-post-info{
-  list-style: none;
-  font-size:  25px;
- } 
+  .view-post-carInfo-price{
+    text-align: center;
+    font-size: 2.7vw;
+    width: 80%;  
+  }
+
+  .view-post-carInfo-commission{
+    font-size: 25px;
+  }
+
+  .view-post-info{
+    list-style: none;
+    font-size:  0;
+    padding-left: 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+
+  .view-post-image{
+    text-align: center;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    display: block;
+  }
+  
+  .view-post-image{
+    width: 85%;
+    max-width: 800px;
+    border: #999090 1px solid;
+  }
+
+  .view-post-desk-top-view-box{
+    width: 45%;
+  }
+
+  .view-post-desk-top-view-box-two{
+    width: 55%;
+    margin-top: 2%;
+  }
+
+  .view-post-desk-top-view-list-box{
+    width: 50%;
+  }
+
+  .view-post-desk-top-view-list-box-two{
+    width: 50%;
+  }
+  
+  .view-post-text-box{
+    width: 90%;
+  }
+
+  .view-post-contact-button{
+    font-size: 20px;
+    height: 50px;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    width: 300px;
+    border-radius: 10%;
+    border: #999090 1px solid;
+    background-color: #EAEDEC;
+  }
+
+  .view-post-user-email{
+    display: block;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 0;
+    margin-bottom: 2%;
+    text-align: center;
+    font-size: 30px;
+    width: 40%;
+    border: #999090 3px solid;
+    background-color: #EAEDEC;
+    overflow-x: auto;
+  }
 }

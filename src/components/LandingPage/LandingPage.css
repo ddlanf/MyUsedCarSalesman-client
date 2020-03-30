@@ -3,15 +3,24 @@
 }
 
 .landing-page > section{
-  padding: 1%;
+  padding: 1.5%;
   font-size: 4.2vw;
   width: 95%;
+  max-width: 1200px;
   margin: 5% auto;
-  background-color: #aaa;
-  max-width: 1300px;
+  background-color: #DFE32E;
+  border: #886060 0.5px solid;
+  border-radius: 100px;
 }
 
 .landing-page-link{
-  color: black;
   text-decoration: none;
+}
+
+@media screen and (min-width: 1000px) {
+  
+  .landing-page > section{
+    padding: 0.2%;
+  }
+    
 }
