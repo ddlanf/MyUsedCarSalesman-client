@@ -3,9 +3,7 @@
 Website Link: [https://myusedcarsalesman.now.sh](https://myusedcarsalesman.now.sh)
 
 ## Images
-# ScreenShot 1
 ![Screenshot1](/src/Utils/myusecarsalesman_pics/view-post.png)
-# ScreenShot 2
 ![Screenshot2](/src/Utils/myusecarsalesman_pics/post.png)
 
 ## Core Features
