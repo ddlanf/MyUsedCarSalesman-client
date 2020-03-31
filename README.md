@@ -4,7 +4,7 @@ Website Link: [https://myusedcarsalesman.now.sh](https://myusedcarsalesman.now.s
 
 ## Images
 ![Screenshot1](/src/Utils/myusecarsalesman_pics/view-post.png)
-![Screenshot2](/src/Utils/myusecarsalesman_pics/landing.png)
+![Screenshot2](/src/Utils/myusecarsalesman_pics/post.png)
 
 ## Core Features
 This serves the client side of the Myusedcarsalesman. 
