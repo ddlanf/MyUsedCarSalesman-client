@@ -21,7 +21,7 @@ The pages this app provides include
  * Admin - Handles administrator tasks such as viewing user info and managing posts
  * Not Found - for all the unsupported endpoints
 
-**This project created with React and vanilla CSS for styling**
+**This is project created with React and vanilla CSS for styling**
 
 **Server Link: [https://myusedcarsalesman.now.sh](https://myusedcarsalesman.now.sh)** 
 
