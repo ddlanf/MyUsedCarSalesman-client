@@ -18,7 +18,8 @@ export default class MakePost extends Component {
                     description: '',
                     price: null,
                     commission_amount: '',
-                    location: '',
+                    city: '',
+                    state: '',
                     other_terms_and_conditions : '',
                     user_id: 1,
                     image : '',
@@ -35,23 +36,34 @@ export default class MakePost extends Component {
         ev.preventDefault()
         const { make, model, year, 
             mileage, description, 
-            commission_amount, 
-            location, price, 
+            commission_amount, price, 
+            city, state,
             other_terms_and_conditions, image} = this.state
         
+        let validPost = true
+        if(!city){
+            this.setState({error : `Please enter city`})
+            validPost = false
+        }
+        if(!state){
+            this.setState({error : `Please enter state`})
+            validPost = false
+        }
+
+        const location = city.trim() + ', ' + state.trim()
+
         const newPost = { make, model, year, 
-            mileage, description, 
-            commission_amount, 
-            location, price, 
+            mileage, description, location,
+            commission_amount, price, 
             other_terms_and_conditions }
         
-            let validPost = true
+            
 
             for(let [key, value] of Object.entries(newPost)){
                 if(value == null || value === ''){
-                   this.setState({error : `Please enter ${key}`})
+                   this.setState({error : `Please enter ${key.replace('_', ' ').replace('_', ' ').replace('_', ' ')}`})
                    validPost = false
-            }
+                }
                
                 if(image === ''){
                     this.setState({error : `Please enter image link`})
@@ -118,7 +130,7 @@ export default class MakePost extends Component {
                     <form className="make-post-form"
                         onSubmit={this.createPost}
                         >
-                         <h1 className="make-post-heading">Create Post</h1>
+                        <h1 className="make-post-heading">Create Post</h1>
                         <div className="make-post-input-box">
                             <div className="make-post-left">
                                 <label name="make" className="make-post-label">Make</label>
@@ -150,6 +162,11 @@ export default class MakePost extends Component {
                                     className="make-post-description make-post-input"
                                     name="description"
                                     onChange={this.handleInputChange}/>
+                                <label name="image" htmlFor="img" className="img make-post-label">Image Link:</label>
+                                <input 
+                                    className="make-post-input make-post-image"
+                                    name="image"
+                                    onChange={this.handleInputChange}/>
                             </div>
                             <div className="make-post-right">
                                 <label name="price" className="make-post-label">Price</label>
@@ -163,27 +180,33 @@ export default class MakePost extends Component {
                                     className="make-post-input make-post-commission"
                                     name="commission_amount"
                                     onChange={this.handleInputChange}/>
-                                <label name="location" className="make-post-label">Location (City, State)</label>
+                                <label name="location" className="make-post-label">City</label>
                                 <input 
-                                    className="make-post-input make-post-location"
-                                    name="location"
+                                   className="make-post-input make-post-city"
+                                   name="city"
+                                   type="text"
+                                   onChange={this.handleInputChange}/>
+                                <label name="location" className="make-post-label">State</label>
+                                <input 
+                                    className="make-post-input make-post-state"
+                                    name="state"
                                     type="text"
-                                    list="locations"
                                     onChange={this.handleInputChange}/>
                                 <label name="terms-and-cond" className="make-post-label">Other Terms and Conditions</label>
                                 <textarea 
                                     className="make-post-terms-and-cond make-post-input"
                                     name="other_terms_and_conditions"
                                     onChange={this.handleInputChange}/>
-                                <label name="image" htmlFor="img" className="img make-post-label">Image Link:</label>
-                                <input 
-                                    className="make-post-input make-post-image"
-                                    name="image"
-                                    onChange={this.handleInputChange}/>
                             </div>
                         </div>
                         {this.state.buffer ? <p className="make-post-buffer">Uploading please wait...</p> : (this.state.error ? <p className="make-post-error">{this.state.error}</p> : '')}
-                        <button disabled={this.state.clicked} id="submit" type="submit" className="make-post-submit">Submit</button>
+                        <button 
+                            style={{backgroundColor : this.state.clicked ?  "#645b5b"  : '#999090'}}
+                            disabled={this.state.clicked} 
+                            id="submit" type="submit" 
+                            className="make-post-submit">
+                            Submit
+                        </button>
                     </form>
                 </section> 
             </div>

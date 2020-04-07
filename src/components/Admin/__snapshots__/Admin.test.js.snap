@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin component renders the UI as expected 1`] = `
+<div
+  className="admin"
+>
+  <h1
+    className="admin-header"
+  >
+    Admin Info
+  </h1>
+  <section
+    className="admin-info"
+  >
+    <div
+      className="users-info users"
+    >
+      <h2>
+        User Info
+      </h2>
+      <table
+        className="admin-table users"
+      >
+        <thead>
+          <tr
+            className="about-users"
+          >
+            <th>
+              ID
+            </th>
+            <th>
+              Username
+            </th>
+            <th>
+              Password
+            </th>
+            <th>
+              First name
+            </th>
+            <th>
+              Last name
+            </th>
+            <th>
+              Email
+            </th>
+            <th>
+              Date Created
+            </th>
+            <th />
+            <th />
+          </tr>
+        </thead>
+        <tbody />
+      </table>
+    </div>
+  </section>
+  <section
+    className="admin-info"
+  >
+    <div
+      className="users-info reports"
+    >
+      <h2>
+        User Complaints and reports
+      </h2>
+      <table
+        className="admin-table reports"
+      >
+        <thead>
+          <tr
+            className="about-reports"
+          >
+            <th>
+              ID
+            </th>
+            <th>
+              Message
+            </th>
+            <th>
+              Type
+            </th>
+            <th>
+              User ID
+            </th>
+            <th>
+              Date Sent
+            </th>
+          </tr>
+        </thead>
+        <tbody />
+      </table>
+    </div>
+  </section>
+  <section
+    className="admin-info"
+  >
+    <div
+      className="users-info posts"
+    >
+      <h2>
+        User Posts
+      </h2>
+      <table
+        className="admin-table posts"
+      >
+        <thead>
+          <tr
+            className="about-posts"
+          >
+            <th>
+              ID
+            </th>
+            <th>
+              Make
+            </th>
+            <th>
+              Model
+            </th>
+            <th>
+              Year
+            </th>
+            <th>
+              Mileage
+            </th>
+            <th>
+              Description
+            </th>
+            <th>
+              Price
+            </th>
+            <th>
+              Commission Amount
+            </th>
+            <th>
+              Location
+            </th>
+            <th>
+              Other terms and conditions
+            </th>
+            <th>
+              User ID
+            </th>
+            <th />
+          </tr>
+        </thead>
+        <tbody />
+      </table>
+    </div>
+  </section>
+  <a
+    className="admin-return"
+    href="/view-posts"
+    onClick={[Function]}
+  >
+    Return
+  </a>
+</div>
+`;

@@ -113,11 +113,23 @@ exports[`EditPost component renders the UI as expected 1`] = `
             className="edit-post-label"
             name="location"
           >
-            Location (City, State)
+            City
           </label>
           <input
-            className="edit-post-input edit-post-location"
+            className="edit-post-input edit-post-city"
+            name="city"
+            onChange={[Function]}
+            type="text"
+          />
+          <label
+            className="edit-post-label"
             name="location"
+          >
+            State
+          </label>
+          <input
+            className="edit-post-input edit-post-state"
+            name="state"
             onChange={[Function]}
             type="text"
           />
@@ -153,6 +165,11 @@ exports[`EditPost component renders the UI as expected 1`] = `
         className="edit-post-submit"
         disabled={false}
         id="submit"
+        style={
+          Object {
+            "backgroundColor": "#999090",
+          }
+        }
         type="submit"
       >
         Submit

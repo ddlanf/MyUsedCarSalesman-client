@@ -81,6 +81,18 @@ exports[`MakePost component renders the UI as expected 1`] = `
             name="description"
             onChange={[Function]}
           />
+          <label
+            className="img make-post-label"
+            htmlFor="img"
+            name="image"
+          >
+            Image Link:
+          </label>
+          <input
+            className="make-post-input make-post-image"
+            name="image"
+            onChange={[Function]}
+          />
         </div>
         <div
           className="make-post-right"
@@ -112,12 +124,23 @@ exports[`MakePost component renders the UI as expected 1`] = `
             className="make-post-label"
             name="location"
           >
-            Location (City, State)
+            City
           </label>
           <input
-            className="make-post-input make-post-location"
-            list="locations"
+            className="make-post-input make-post-city"
+            name="city"
+            onChange={[Function]}
+            type="text"
+          />
+          <label
+            className="make-post-label"
             name="location"
+          >
+            State
+          </label>
+          <input
+            className="make-post-input make-post-state"
+            name="state"
             onChange={[Function]}
             type="text"
           />
@@ -132,18 +155,6 @@ exports[`MakePost component renders the UI as expected 1`] = `
             name="other_terms_and_conditions"
             onChange={[Function]}
           />
-          <label
-            className="img make-post-label"
-            htmlFor="img"
-            name="image"
-          >
-            Image Link:
-          </label>
-          <input
-            className="make-post-input make-post-image"
-            name="image"
-            onChange={[Function]}
-          />
         </div>
       </div>
       
@@ -151,6 +162,11 @@ exports[`MakePost component renders the UI as expected 1`] = `
         className="make-post-submit"
         disabled={false}
         id="submit"
+        style={
+          Object {
+            "backgroundColor": "#999090",
+          }
+        }
         type="submit"
       >
         Submit

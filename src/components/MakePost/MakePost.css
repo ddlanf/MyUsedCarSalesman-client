@@ -10,6 +10,7 @@
     margin-bottom: 6%;
     margin-left: auto;
     margin-right: auto;
+    padding-right: 3%;
     font-family: 'Merriweather Sans', sans-serif;
 }
 
@@ -43,9 +44,8 @@
     margin: 0;
 }
 
-
 textarea{
-    margin-left: -5%;
+    margin-left: 0%;
     position: relative;
     top: -0.2%;
 }
@@ -77,9 +77,17 @@ textarea{
     height: 20vw;
  }
 
+ .make-post-location-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+ }
+
 .make-post-image{
     width: 55%;
-    font-size: 2vw;
+
  }
 
  .make-post-submit{
@@ -91,18 +99,12 @@ textarea{
     max-width: 300px;
     border-radius: 10%;
     color: black;
-    background-color: #999090;
-    border: #999090 solid 2px;
     margin-top: 4%;
     margin-bottom: 2%;
     margin-left: auto;
     margin-right: auto;
     font-size: 5vw;
-}
-
-.make-post-submit:hover{
-    background-color: #645b5b;
-    border: #645b5b solid 2px;
+    cursor: pointer;
 }
 
 .make-post-error, .make-post-buffer{

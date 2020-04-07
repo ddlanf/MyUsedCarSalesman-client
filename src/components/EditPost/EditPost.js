@@ -3,11 +3,12 @@ import { withRouter } from 'react-router-dom'
 import './EditPost.css'
 import PostApiService from '../../services/posts-api-service'
 import ImageApiService from '../../services/images-api-service'
+import PostContext from '../../contexts/PostContext'
 
 class EditPost extends Component {
 
     _isMounted = false;
-
+    static contextType = PostContext
 
     constructor(props){
         super(props);
@@ -19,7 +20,8 @@ class EditPost extends Component {
                     description: '',
                     price: '',
                     commission_amount: '',
-                    location: '',
+                    city: '',
+                    state: '',
                     other_terms_and_conditions : '',
                     image : '',
                     prevPost : {},
@@ -31,15 +33,23 @@ class EditPost extends Component {
 
     editPost = (ev) =>{
 
-        this.setState({ clicked: true })
+        this.setState({ clicked: true, error : '', })
         
         ev.preventDefault()
         const { make, model, year, 
             mileage, description, 
             commission_amount, 
-            location, price, 
+            price, city, state,
             other_terms_and_conditions, image } = this.state
-        
+     
+        let location = ''
+
+        if(city || state){
+           const newCity = city ? city : this.state.prevPost.city 
+           const newState = state ? state : this.state.prevPost.state 
+           location = newCity.trim() + ', ' + newState.trim()
+        }
+
         const tempPost = { make, model, year, 
             mileage, description, 
             commission_amount, 
@@ -47,48 +57,41 @@ class EditPost extends Component {
             other_terms_and_conditions }
         
         let updatedPost = {}
-
         for(const key in tempPost){
            
             if(tempPost[key]){
                 updatedPost[key] = tempPost[key]
             }
         }
-
-    
+        console.log(updatedPost)
         const { history } = this.props
         const { postId } = this.props.match.params
 
         if(Object.keys(updatedPost).length){
             this.setState({ buffer: true })
+           
             PostApiService.editPost(postId, updatedPost)
-                .then(() => {
-                    PostApiService.getPosts()
+                .then(res=>{  
+                        PostApiService.getPosts()
                         .then(posts =>{ 
                             this.context.setPosts(posts) 
-                            if(!image){ history.push('/view-posts') }
-                        })
-                        .catch(res =>{
-                            if(this._isMounted){
-                                this.setState({ buffer: false, error: res.error })
-                            }
+                            if(!image){ history.push('/view-posts') } 
                         })
                 })
                 .catch(res => {
-                    history.push('/view-posts') 
-                    if(this._isMounted){this.setState({ error: res.error })}
+                    if(this._isMounted && res.error){ this.setState({ error: res.error, buffer: false })}
                 })
         }
          
         const updatedImage = { src : image } 
-    
+
         if(image){
             ImageApiService.editImage(updatedImage, postId)
                 .then(() => {
                     ImageApiService.getImages()
                         .then(images =>{ 
                             this.context.setImages(images) 
-                            history.push('/view-posts')
+                            if(!this.state.error){ history.push('/view-posts')}
                         })
                         .catch(res =>{
                             if(this._isMounted){
@@ -97,7 +100,7 @@ class EditPost extends Component {
                         })
                 })
                 .catch(res => {
-                    if(this._isMounted){this.setState({ error: res.error })}
+                    if(this._isMounted && res.error){ this.setState({ error: res.error, buffer: false })}
                 })
         }
 
@@ -109,7 +112,8 @@ class EditPost extends Component {
         const { value } = event.target
         
         this.setState({
-             [name] : value 
+             [name] : value, 
+             clicked: false
         })
     }
 
@@ -121,6 +125,8 @@ class EditPost extends Component {
 
         PostApiService.getPost(postId)
             .then(post =>{
+               post.city = post.location.slice(0, post.location.indexOf(','))
+               post.state = post.location.slice(post.location.indexOf(',') + 2, post.location.length)
                this.setState({ prevPost: post })
             })
             .catch(res => {
@@ -199,12 +205,19 @@ class EditPost extends Component {
                                     name="commission_amount"
                                     defaultValue={this.state.prevPost.commission_amount} 
                                     onChange={this.handleInputChange}/>
-                                <label name="location" className="edit-post-label">Location (City, State)</label>
+                                <label name="location" className="edit-post-label">City</label>
                                 <input 
-                                    className="edit-post-input edit-post-location"
-                                    name="location"
+                                   className="edit-post-input edit-post-city"
+                                   name="city"
+                                   type="text"
+                                   defaultValue={this.state.prevPost.city} 
+                                   onChange={this.handleInputChange}/>
+                                <label name="location" className="edit-post-label">State</label>
+                                <input 
+                                    className="edit-post-input edit-post-state"
+                                    name="state"
                                     type="text"
-                                    defaultValue={this.state.prevPost.location} 
+                                    defaultValue={this.state.prevPost.state} 
                                     onChange={this.handleInputChange}/>
                                 <label name="terms-and-cond" className="edit-post-label">Other Terms and Conditions</label>
                                 <textarea 
@@ -221,8 +234,14 @@ class EditPost extends Component {
                                     onChange={this.handleInputChange}/>
                             </div>
                         </div>
-                        {this.state.buffer ? <p className="make-post-buffer">Uploading please wait...</p> : (this.state.error ? <p className="make-post-error">{this.state.error}</p> : '')}
-                        <button disabled={this.state.clicked} id="submit" type="submit" className="edit-post-submit">Submit</button>
+                        {this.state.buffer ? <p className="edit-post-buffer">Uploading please wait...</p> : (this.state.error ? <p className="edit-post-error">{this.state.error}</p> : '')}
+                        <button 
+                            style={{backgroundColor : this.state.clicked ?  "#645b5b"  : '#999090'}}
+                            disabled={this.state.clicked} 
+                            id="submit" type="submit" 
+                            className="edit-post-submit">
+                            Submit
+                        </button>
                     </form>
                 </section> 
             </div>

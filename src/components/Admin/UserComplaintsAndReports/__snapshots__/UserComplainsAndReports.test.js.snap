@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserComplaintsAndReports component renders the UI as expected 1`] = `
+<div
+  className="users-info reports"
+>
+  <h2>
+    User Complaints and reports
+  </h2>
+  <table
+    className="admin-table reports"
+  >
+    <thead>
+      <tr
+        className="about-reports"
+      >
+        <th>
+          ID
+        </th>
+        <th>
+          Message
+        </th>
+        <th>
+          Type
+        </th>
+        <th>
+          User ID
+        </th>
+        <th>
+          Date Sent
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminLogin component renders the UI as expected 1`] = `
+<div
+  className="admin-login-box"
+>
+  <h1
+    className="admin-login-header"
+  >
+    Admin Log in
+  </h1>
+  
+  <form
+    className="admin-login-form"
+    onSubmit={[Function]}
+  >
+    <label
+      className="login-label"
+      name="user-name"
+    >
+      Admin Name
+    </label>
+    <input
+      className="admin-login-input"
+      name="admin_name"
+      onChange={[Function]}
+      type="text"
+    />
+    <label
+      className="admin-login-label"
+      name="user-password"
+    >
+      Password
+    </label>
+    <input
+      className="admin-login-input password"
+      name="password"
+      onChange={[Function]}
+      type="password"
+    />
+    <input
+      className="admin-login-submit"
+      type="submit"
+    />
+  </form>
+  <a
+    className="go-back"
+    href="/login"
+    onClick={[Function]}
+  >
+    Back
+  </a>
+</div>
+`;

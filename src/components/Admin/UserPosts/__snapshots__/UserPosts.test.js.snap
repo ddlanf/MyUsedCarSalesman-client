@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserPosts component renders the UI as expected 1`] = `
+<div
+  className="users-info posts"
+>
+  <h2>
+    User Posts
+  </h2>
+  <table
+    className="admin-table posts"
+  >
+    <thead>
+      <tr
+        className="about-posts"
+      >
+        <th>
+          ID
+        </th>
+        <th>
+          Make
+        </th>
+        <th>
+          Model
+        </th>
+        <th>
+          Year
+        </th>
+        <th>
+          Mileage
+        </th>
+        <th>
+          Description
+        </th>
+        <th>
+          Price
+        </th>
+        <th>
+          Commission Amount
+        </th>
+        <th>
+          Location
+        </th>
+        <th>
+          Other terms and conditions
+        </th>
+        <th>
+          User ID
+        </th>
+        <th />
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;
