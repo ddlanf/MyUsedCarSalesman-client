@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewPosts component renders the UI as expected 1`] = `
+Array [
+  <a
+    className="view-posts-link"
+    href="/login"
+    onClick={[Function]}
+  >
+    <button
+      className="create-post-button"
+    >
+      Create Post
+    </button>
+  </a>,
+  <section
+    className="view-posts-post-box"
+  />,
+]
+`;

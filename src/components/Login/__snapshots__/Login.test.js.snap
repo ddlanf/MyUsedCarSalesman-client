@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login component renders the UI as expected 1`] = `
+<div
+  className="login-box"
+>
+  <div
+    className="login-header-box"
+  >
+    <h1
+      className="login-header"
+    >
+      Log in
+    </h1>
+  </div>
+  
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      className="login-label"
+      name="user-name"
+    >
+      User Name
+    </label>
+    <input
+      className="login-input"
+      name="user_name"
+      onChange={[Function]}
+      type="text"
+    />
+    <label
+      className="login-label"
+      name="user-password"
+    >
+      Password
+    </label>
+    <input
+      className="login-input"
+      name="password"
+      onChange={[Function]}
+      type="password"
+    />
+    <input
+      className="login-submit"
+      type="submit"
+    />
+  </form>
+  <h3
+    className="login-register-heading"
+  >
+    New to MyUsedCarSalesman?
+    <span
+      className="break"
+    >
+      <a
+        className="register-login-link"
+        href="/register"
+        onClick={[Function]}
+      >
+        Register
+      </a>
+    </span>
+  </h3>
+  <h3
+    className="login-register-heading"
+  >
+    <a
+      className="login-register-link"
+      href="/admin-login"
+      onClick={[Function]}
+    >
+      Admin Login
+    </a>
+  </h3>
+</div>
+`;

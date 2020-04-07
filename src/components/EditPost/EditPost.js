@@ -3,13 +3,11 @@ import { withRouter } from 'react-router-dom'
 import './EditPost.css'
 import PostApiService from '../../services/posts-api-service'
 import ImageApiService from '../../services/images-api-service'
-import PostContext from '../../contexts/PostContext'
 
 class EditPost extends Component {
 
     _isMounted = false;
 
-    static contextType = PostContext
 
     constructor(props){
         super(props);

@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditPost component renders the UI as expected 1`] = `
+<div
+  className="edit-post"
+>
+  <section
+    className="edit-post-form-box"
+  >
+    <form
+      className="edit-post-form"
+      onSubmit={[Function]}
+    >
+      <h1
+        className="edit-post-heading"
+      >
+        Edit Post
+      </h1>
+      <div
+        className="edit-post-input-box"
+      >
+        <div
+          className="edit-post-left"
+        >
+          <label
+            className="edit-post-label"
+            name="edit"
+          >
+            Make
+          </label>
+          <input
+            className="edit-post-input"
+            name="make"
+            onChange={[Function]}
+            type="text"
+          />
+          <label
+            className="edit-post-label"
+            name="model"
+          >
+            Model
+          </label>
+          <input
+            className="edit-post-input"
+            name="model"
+            onChange={[Function]}
+            type="text"
+          />
+          <label
+            className="edit-post-label"
+            name="year"
+          >
+            Year
+          </label>
+          <input
+            className="edit-post-input"
+            name="year"
+            onChange={[Function]}
+            type="number"
+          />
+          <label
+            className="edit-post-label"
+            name="mileage"
+          >
+            Mileage
+          </label>
+          <input
+            className="edit-post-input"
+            name="mileage"
+            onChange={[Function]}
+            type="number"
+          />
+          <label
+            className="edit-post-label"
+            name="description"
+          >
+            Description
+          </label>
+          <textarea
+            className="edit-post-description edit-post-input"
+            name="description"
+            onChange={[Function]}
+          />
+        </div>
+        <div
+          className="edit-post-right"
+        >
+          <label
+            className="edit-post-label"
+            name="price"
+          >
+            Price
+          </label>
+          <input
+            className="edit-post-input"
+            name="price"
+            onChange={[Function]}
+            type="number"
+          />
+          <label
+            className="edit-post-label"
+            name="commission"
+          >
+            Commision
+          </label>
+          <input
+            className="edit-post-input edit-post-commission"
+            name="commission_amount"
+            onChange={[Function]}
+            type="text"
+          />
+          <label
+            className="edit-post-label"
+            name="location"
+          >
+            Location (City, State)
+          </label>
+          <input
+            className="edit-post-input edit-post-location"
+            name="location"
+            onChange={[Function]}
+            type="text"
+          />
+          <label
+            className="edit-post-label"
+            name="terms-and-cond"
+          >
+            Other Terms and Conditions
+          </label>
+          <textarea
+            className="edit-post-terms-and-cond edit-post-input"
+            name="other_terms_and_conditions"
+            onChange={[Function]}
+          />
+          <label
+            className="img edit-post-label"
+            htmlFor="img"
+            name="image"
+          >
+            Image Link:
+          </label>
+          <input
+            className="edit-post-input edit-post-image"
+            defaultValue=""
+            name="image"
+            onChange={[Function]}
+            type="text"
+          />
+        </div>
+      </div>
+      
+      <button
+        className="edit-post-submit"
+        disabled={false}
+        id="submit"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </section>
+</div>
+`;

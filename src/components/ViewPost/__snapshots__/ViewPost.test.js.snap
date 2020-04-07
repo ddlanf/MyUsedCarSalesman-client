@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewPost component renders the UI as expected 1`] = `
+<section
+  className="view-post-box"
+>
+  <div
+    className="view-post-desk-top-view-box"
+  >
+    <h1
+      className="view-post-carInfo-name"
+    >
+       
+       
+       
+    </h1>
+    <h2
+      className="view-post-carInfo-price"
+    >
+      $
+    </h2>
+    <img
+      alt="Not Found"
+      className="view-post-image"
+      src="notfound.png"
+    />
+    <h3
+      className="view-post-carInfo-commission"
+    />
+  </div>
+  <div
+    className="view-post-desk-top-view-box-two"
+  >
+    <ul
+      className="view-post-info"
+    >
+      <div
+        className="view-post-desk-top-view-list-box"
+      >
+        <li>
+          <span
+            className="view-post-text-box-label"
+          >
+            Make
+          </span>
+        </li>
+        <li>
+          <div
+            className="view-post-text-box"
+          />
+        </li>
+        <li>
+          <span
+            className="view-post-text-box-label"
+          >
+            Model
+          </span>
+        </li>
+        <li>
+          <div
+            className="view-post-text-box"
+          />
+        </li>
+        <li>
+          <span
+            className="view-post-text-box-label"
+          >
+            Year
+          </span>
+        </li>
+        <li>
+          <div
+            className="view-post-text-box"
+          />
+        </li>
+        <li>
+          <span
+            className="view-post-text-box-label"
+          >
+            Mileage
+          </span>
+        </li>
+        <li>
+          <div
+            className="view-post-text-box"
+          />
+        </li>
+        <li>
+          <span
+            className="view-post-text-box-label"
+          >
+            Description
+          </span>
+        </li>
+        <li>
+          <div
+            className="view-post-text-box description"
+          />
+        </li>
+      </div>
+      <div
+        className="view-post-desk-top-view-list-box-two"
+      >
+        <li>
+          <span
+            className="view-post-text-box-label"
+          >
+            Price
+          </span>
+        </li>
+        <li>
+          <div
+            className="view-post-text-box"
+          >
+            $
+          </div>
+        </li>
+        <li>
+          <span
+            className="view-post-text-box-label"
+          >
+            Commission
+          </span>
+        </li>
+        <li>
+          <div
+            className="view-post-text-box"
+          />
+        </li>
+        <li>
+          <span
+            className="view-post-text-box-label"
+          >
+            Location
+          </span>
+        </li>
+        <li>
+          <div
+            className="view-post-text-box"
+          />
+        </li>
+        <li>
+          <span
+            className="view-post-text-box-label"
+          >
+            Other terms and conditions
+          </span>
+        </li>
+        <li>
+          <div
+            className="view-post-text-box terms-cond"
+          />
+        </li>
+        <li>
+          <span
+            className="view-post-text-box-label"
+          >
+            Posted By
+          </span>
+        </li>
+        <li>
+          <div
+            className="view-post-text-box"
+          />
+        </li>
+      </div>
+    </ul>
+  </div>
+  <button
+    className="view-post-contact-button"
+    onClick={[Function]}
+  >
+    Contact Owner
+  </button>
+  
+</section>
+`;

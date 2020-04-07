@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AuthBoxes component renders the UI as expected 1`] = `
+Array [
+  <section
+    className="auth-boxes"
+  >
+    <div
+      className="Login-register-admin"
+    >
+      <h2
+        className="mini-login-header"
+      >
+        Login
+      </h2>
+      <form
+        onSubmit={[Function]}
+      >
+        <label
+          className="mini-login-label"
+          name="user-name"
+        >
+          User Name
+        </label>
+        <input
+          className="mini-login-input"
+          name="user_name"
+          onChange={[Function]}
+          type="text"
+        />
+        <label
+          className="mini-login-label"
+          name="user-password"
+        >
+          Password
+        </label>
+        <input
+          className="mini-login-input"
+          name="password"
+          onChange={[Function]}
+          type="password"
+        />
+        <input
+          className="mini-login-submit"
+          type="submit"
+        />
+      </form>
+      <p
+        className="mini-login-register"
+      >
+        New to MyUsedCarSalesman?
+        <span
+          className="auth-box-break"
+        >
+          <a
+            className="mini-login-link"
+            href="/register"
+            onClick={[Function]}
+          >
+            Register
+          </a>
+        </span>
+      </p>
+      <p
+        className="mini-login-admin"
+      >
+        <a
+          className="mini-login-link"
+          href="/admin-login"
+          onClick={[Function]}
+        >
+          Admin Login
+        </a>
+      </p>
+    </div>
+    <div
+      className="additional-info"
+    >
+      <p>
+        MyUsedCarSalesman
+      </p>
+      <p>
+        All rights reserved
+      </p>
+      <p>
+        Created on 04/01/2020
+      </p>
+      <p>
+        By Daniel Laufenberg
+      </p>
+      <p>
+        <a
+          className="portfolio-link"
+          href="https://ddlanf.github.io/Portfolio"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Portfolio
+        </a>
+      </p>
+      <div
+        className="image-link-container"
+      >
+        <a
+          href="https://github.com/ddlanf"
+        >
+          <img
+            alt="github"
+            className="github"
+            rel="noopener noreferrer"
+            src="github.png"
+            target="_blank"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/daniel-laufenberg/"
+        >
+          <img
+            alt="linkedIn"
+            className="linkedIn"
+            rel="noopener noreferrer"
+            src="linkedIn.png"
+            target="_blank"
+          />
+        </a>
+      </div>
+    </div>
+  </section>,
+  <div
+    className="demo"
+  >
+    <h1
+      onClick={[Function]}
+    >
+      Click here for instruction
+    </h1>
+    
+  </div>,
+]
+`;

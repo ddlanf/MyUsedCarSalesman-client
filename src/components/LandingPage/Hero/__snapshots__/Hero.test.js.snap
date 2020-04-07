@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero component renders the UI as expected 1`] = `
+<div
+  className="hero"
+>
+  <a
+    className="landing-page-get-started-link-mobile"
+    href="/view-posts"
+    onClick={[Function]}
+  >
+    Get Started
+  </a>
+  <a
+    className="landing-page-get-started-link"
+    href="/view-posts"
+    onClick={[Function]}
+  >
+    Get Started
+  </a>
+  <img
+    alt="salesman"
+    className="salesman"
+    src="salesman.png"
+  />
+  <img
+    alt="yellow-car"
+    className="yellow-car"
+    src="yellowcar.png"
+  />
+</div>
+`;

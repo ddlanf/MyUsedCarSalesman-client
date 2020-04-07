@@ -1,0 +1,303 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders the UI as expected 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App_header"
+  >
+    <nav
+      className="nav-bar"
+    >
+      <div
+        className="left-nav"
+      >
+        <a
+          className="nav-link main"
+          href="/view-posts"
+          onClick={[Function]}
+        >
+          MyUsedCarSalesman
+        </a>
+      </div>
+      <div
+        className="right-nav"
+      >
+        <a
+          className="nav-link login-link"
+          href="/login"
+          onClick={[Function]}
+        >
+          Log in
+        </a>
+        <a
+          className="nav-link register-link"
+          href="/register"
+          onClick={[Function]}
+        >
+          Register
+        </a>
+      </div>
+    </nav>
+  </header>
+  <main
+    className="App_main"
+  >
+    <div
+      className="landing-page"
+    >
+      <div
+        className="hero"
+      >
+        <a
+          className="landing-page-get-started-link-mobile"
+          href="/view-posts"
+          onClick={[Function]}
+        >
+          Get Started
+        </a>
+        <a
+          className="landing-page-get-started-link"
+          href="/view-posts"
+          onClick={[Function]}
+        >
+          Get Started
+        </a>
+        <img
+          alt="salesman"
+          className="salesman"
+          src="salesman.png"
+        />
+        <img
+          alt="yellow-car"
+          className="yellow-car"
+          src="yellowcar.png"
+        />
+      </div>
+      <section>
+        <div
+          className="heading-box"
+        >
+          <h1
+            className="header-main"
+          >
+            The most effortless way to sell your vehicle, while maximizing your return
+          </h1>
+        </div>
+        <img
+          alt="money and car"
+          className="heading-image money-and-car-image"
+          src="moneyandcar.png"
+        />
+        <div
+          className="sub-text"
+        >
+          <p>
+            MyUsedCarSalesman helps you find an individual who is willing to do all the complicated and tedious process of selling your old car.
+          </p>
+        </div>
+      </section>
+      <section>
+        <div
+          className="heading-box"
+        >
+          <h1
+            className="header-main"
+          >
+            Forget the trade-in value!
+          </h1>
+        </div>
+        <div
+          className="sub-text"
+        >
+          <p>
+            Dealers will take your car off your hand for a lot less money than what your car is actually worth so that they get the most profit out of your vehicle.
+          </p>
+          <img
+            alt="dealer"
+            className="heading-image dealer"
+            src="dealer.png"
+          />
+          <p>
+            In MyUsedCarSalesman, you decide how much value you will get out your vehicle.
+          </p>
+        </div>
+      </section>
+      <section>
+        <div
+          className="heading-box"
+        >
+          <h1
+            className="header-main"
+          >
+            Looking to earn some cash? 
+            <span
+              className="landingpage-break"
+            >
+              Become a seller!!
+            </span>
+             
+          </h1>
+        </div>
+        <img
+          alt="money"
+          className="heading-image cash"
+          src="cash.png"
+        />
+        <div
+          className="sub-text"
+        >
+          <p>
+            <span
+              className="new-para"
+            >
+              Anyone can become a seller on MyUsedCarSalesman! Once you have an account, simply accept any contracts posted by other users and get sellin'!
+            </span>
+            No diploma, certification, nor prior sales experience necessary, let your results speak for itself.
+          </p>
+        </div>
+      </section>
+      <section
+        className="auth-boxes"
+      >
+        <div
+          className="Login-register-admin"
+        >
+          <h2
+            className="mini-login-header"
+          >
+            Login
+          </h2>
+          <form
+            onSubmit={[Function]}
+          >
+            <label
+              className="mini-login-label"
+              name="user-name"
+            >
+              User Name
+            </label>
+            <input
+              className="mini-login-input"
+              name="user_name"
+              onChange={[Function]}
+              type="text"
+            />
+            <label
+              className="mini-login-label"
+              name="user-password"
+            >
+              Password
+            </label>
+            <input
+              className="mini-login-input"
+              name="password"
+              onChange={[Function]}
+              type="password"
+            />
+            <input
+              className="mini-login-submit"
+              type="submit"
+            />
+          </form>
+          <p
+            className="mini-login-register"
+          >
+            New to MyUsedCarSalesman?
+            <span
+              className="auth-box-break"
+            >
+              <a
+                className="mini-login-link"
+                href="/register"
+                onClick={[Function]}
+              >
+                Register
+              </a>
+            </span>
+          </p>
+          <p
+            className="mini-login-admin"
+          >
+            <a
+              className="mini-login-link"
+              href="/admin-login"
+              onClick={[Function]}
+            >
+              Admin Login
+            </a>
+          </p>
+        </div>
+        <div
+          className="additional-info"
+        >
+          <p>
+            MyUsedCarSalesman
+          </p>
+          <p>
+            All rights reserved
+          </p>
+          <p>
+            Created on 04/01/2020
+          </p>
+          <p>
+            By Daniel Laufenberg
+          </p>
+          <p>
+            <a
+              className="portfolio-link"
+              href="https://ddlanf.github.io/Portfolio"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Portfolio
+            </a>
+          </p>
+          <div
+            className="image-link-container"
+          >
+            <a
+              href="https://github.com/ddlanf"
+            >
+              <img
+                alt="github"
+                className="github"
+                rel="noopener noreferrer"
+                src="github.png"
+                target="_blank"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/daniel-laufenberg/"
+            >
+              <img
+                alt="linkedIn"
+                className="linkedIn"
+                rel="noopener noreferrer"
+                src="linkedIn.png"
+                target="_blank"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+      <div
+        className="demo"
+      >
+        <h1
+          onClick={[Function]}
+        >
+          Click here for instruction
+        </h1>
+        
+      </div>
+    </div>
+  </main>
+  <footer
+    className="App_footer"
+  >
+    © 2020 MyUsedCarSalesman
+  </footer>
+</div>
+`;

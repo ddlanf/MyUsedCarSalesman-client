@@ -1,25 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import MakePost from './MakePost';
 import renderer from 'react-test-renderer';
-import { BrowserRouter } from 'react-router-dom'
 
-describe('App component', () => {
+describe('MakePost component', () => {
     
     it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<BrowserRouter>
-                        <App/>
-                    </BrowserRouter>, div);
+    ReactDOM.render(<MakePost/>, div);
     ReactDOM.unmountComponentAtNode(div);
     });
 
     it('renders the UI as expected', () => {
         const tree = renderer
-          .create(
-                <BrowserRouter>
-                    <App/>
-                </BrowserRouter>)
+          .create(<MakePost/>)
           .toJSON();
         expect(tree).toMatchSnapshot();  
       });

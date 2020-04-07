@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import EditPost from './EditPost';
 import renderer from 'react-test-renderer';
 import { BrowserRouter } from 'react-router-dom'
 
-describe('App component', () => {
+describe('EditPost component', () => {
     
     it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<BrowserRouter>
-                        <App/>
+                        <EditPost/>
                     </BrowserRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
     });
@@ -18,7 +18,7 @@ describe('App component', () => {
         const tree = renderer
           .create(
                 <BrowserRouter>
-                    <App/>
+                    <EditPost/>
                 </BrowserRouter>)
           .toJSON();
         expect(tree).toMatchSnapshot();  

@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MakePost component renders the UI as expected 1`] = `
+<div
+  className="make-post"
+>
+  <section
+    className="make-post-form-box"
+  >
+    <form
+      className="make-post-form"
+      onSubmit={[Function]}
+    >
+      <h1
+        className="make-post-heading"
+      >
+        Create Post
+      </h1>
+      <div
+        className="make-post-input-box"
+      >
+        <div
+          className="make-post-left"
+        >
+          <label
+            className="make-post-label"
+            name="make"
+          >
+            Make
+          </label>
+          <input
+            className="make-post-input"
+            name="make"
+            onChange={[Function]}
+            type="text"
+          />
+          <label
+            className="make-post-label"
+            name="model"
+          >
+            Model
+          </label>
+          <input
+            className="make-post-input"
+            name="model"
+            onChange={[Function]}
+            type="text"
+          />
+          <label
+            className="make-post-label"
+            name="year"
+          >
+            Year
+          </label>
+          <input
+            className="make-post-input"
+            name="year"
+            onChange={[Function]}
+            type="number"
+          />
+          <label
+            className="make-post-label"
+            name="mileage"
+          >
+            Mileage
+          </label>
+          <input
+            className="make-post-input"
+            name="mileage"
+            onChange={[Function]}
+            type="number"
+          />
+          <label
+            className="make-post-label"
+            name="description"
+          >
+            Description
+          </label>
+          <textarea
+            className="make-post-description make-post-input"
+            name="description"
+            onChange={[Function]}
+          />
+        </div>
+        <div
+          className="make-post-right"
+        >
+          <label
+            className="make-post-label"
+            name="price"
+          >
+            Price
+          </label>
+          <input
+            className="make-post-input"
+            name="price"
+            onChange={[Function]}
+            type="number"
+          />
+          <label
+            className="make-post-label"
+            name="commission"
+          >
+            Commision (Ex: 20%)
+          </label>
+          <input
+            className="make-post-input make-post-commission"
+            name="commission_amount"
+            onChange={[Function]}
+          />
+          <label
+            className="make-post-label"
+            name="location"
+          >
+            Location (City, State)
+          </label>
+          <input
+            className="make-post-input make-post-location"
+            list="locations"
+            name="location"
+            onChange={[Function]}
+            type="text"
+          />
+          <label
+            className="make-post-label"
+            name="terms-and-cond"
+          >
+            Other Terms and Conditions
+          </label>
+          <textarea
+            className="make-post-terms-and-cond make-post-input"
+            name="other_terms_and_conditions"
+            onChange={[Function]}
+          />
+          <label
+            className="img make-post-label"
+            htmlFor="img"
+            name="image"
+          >
+            Image Link:
+          </label>
+          <input
+            className="make-post-input make-post-image"
+            name="image"
+            onChange={[Function]}
+          />
+        </div>
+      </div>
+      
+      <button
+        className="make-post-submit"
+        disabled={false}
+        id="submit"
+        type="submit"
+      >
+        Submit
+      </button>
+    </form>
+  </section>
+</div>
+`;

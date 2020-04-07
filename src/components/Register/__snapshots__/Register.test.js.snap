@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register component renders the UI as expected 1`] = `
+<div
+  className="register-box"
+>
+  <h1
+    className="register-header"
+  >
+    Register
+  </h1>
+  <form
+    className="register-form"
+    onSubmit={[Function]}
+  >
+    <label
+      className="register-label"
+      name="first-name"
+    >
+      First Name
+    </label>
+    
+    <input
+      className="register-input"
+      name="first_name"
+      onChange={[Function]}
+      type="text"
+    />
+    <label
+      className="register-label"
+      name="last-name"
+    >
+      Last Name
+    </label>
+    
+    <input
+      className="register-input"
+      name="last_name"
+      onChange={[Function]}
+      type="text"
+    />
+    <label
+      className="register-label"
+      name="user-name"
+    >
+      Username
+    </label>
+    
+    <input
+      className="register-input"
+      name="user_name"
+      onChange={[Function]}
+      type="text"
+    />
+    <label
+      className="register-label"
+      name="password"
+    >
+      Password
+    </label>
+    
+    <input
+      className="register-input"
+      name="password"
+      onChange={[Function]}
+      type="password"
+    />
+    <label
+      className="register-label"
+      name="email"
+    >
+      Email
+    </label>
+    
+    <input
+      className="register-input"
+      name="email"
+      onChange={[Function]}
+      type="text"
+    />
+    
+    <input
+      className="register-submit"
+      type="submit"
+    />
+  </form>
+  <h3
+    className="register-login-heading"
+  >
+    Returning User?
+    <span
+      className="break"
+    >
+      <a
+        className="register-login-link"
+        href="/login"
+        onClick={[Function]}
+      >
+        Log In
+      </a>
+    </span>
+  </h3>
+</div>
+`;
