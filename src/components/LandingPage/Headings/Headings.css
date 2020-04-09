@@ -23,18 +23,22 @@
 }
 
 .header-main{
-  font-size: 4.8vw;
+  font-size: 5.5vw;
+  width: 95%;
+  padding-top: 2px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sub-text{
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  width: 85%;
+  width: 80%;
 }
 
 .sub-text > p{
-  font-size: 3.3vw;
+  font-size: 4.3vw;
   line-height: normal;
   text-align: center;
 }
@@ -51,9 +55,50 @@
 }
 
 
+/*for demo purposes only*/
+.demo > h1{
+  font-size: 5vw;
+  margin: 1%;
+  cursor: pointer;
+}
+
+.demo-break{
+  display: block;
+}
+
+.demo{
+  width: 80%;
+  border: solid black 1px;
+  top: 4%;
+  right: 2%;
+  background-color:  #EAEDEC;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 4vw;
+  line-height: 4vw;
+  margin-top: 5%;
+  line-height: 6vw;
+}
+
+ol{
+  text-align: left;
+  margin-left: 3%;
+}
+
 
 @media screen and (min-width: 1000px) {
-  
+
+  .demo > h1{
+    font-size: 40px;
+    margin: 0;
+  }
+
+  .demo{
+    font-size: 30px;
+  }
+  /*ends here*/
+
   .header-main{
     font-size: 50px;
   }

@@ -10,8 +10,11 @@ import './ViewPost.css'
 class ViewPost extends Component {
 
     static contextType = PostContext
-
-    state = { clicked : false, email: ''}
+    constructor(props){
+        super(props)
+        this.state = { clicked : false, email: ''}
+    }
+   
     
     buttonClicked = () =>{
         this.setState({clicked : true})
@@ -28,7 +31,6 @@ class ViewPost extends Component {
 
     componentDidMount(){
         const { postId } = this.props.match.params;
-       
         this.context.clearError()
         PostApiService.getPost(postId)
             .then(post =>{ 

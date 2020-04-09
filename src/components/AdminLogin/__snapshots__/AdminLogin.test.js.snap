@@ -38,10 +38,12 @@ exports[`AdminLogin component renders the UI as expected 1`] = `
       onChange={[Function]}
       type="password"
     />
-    <input
+    <button
       className="admin-login-submit"
       type="submit"
-    />
+    >
+      Submit
+    </button>
   </form>
   <a
     className="go-back"

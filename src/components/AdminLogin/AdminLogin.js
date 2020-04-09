@@ -59,7 +59,7 @@ export default class AdminLogin extends Component {
                             className="admin-login-input password"
                             name="password"
                             onChange={this.handleInputChange}/>
-                    <input type="submit" className="admin-login-submit"></input>
+                    <button type="submit" className="admin-login-submit">Submit</button>
                 </form>
                 <Link
                     to="/login"

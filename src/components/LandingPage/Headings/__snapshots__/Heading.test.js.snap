@@ -2,6 +2,16 @@
 
 exports[`Headings component renders the UI as expected 1`] = `
 Array [
+  <div
+    className="demo"
+  >
+    <h1
+      onClick={[Function]}
+    >
+      Click here for instruction
+    </h1>
+    
+  </div>,
   <section>
     <div
       className="heading-box"

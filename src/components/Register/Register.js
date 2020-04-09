@@ -121,9 +121,11 @@ export default class Register extends Component {
                         className="register-input"
                         onChange={this.handleInputChange}/>
                     {this.state.error ? (this.state.error.toLowerCase().includes("space") ? <p className='register-error'>{this.state.error}</p> : '') : ''}
-                    <input 
+                    <button 
                         type="submit" 
-                        className="register-submit"/>
+                        className="register-submit">
+                        Submit
+                    </button>
                 </form>
                 <h3 className="register-login-heading">
                         Returning User?

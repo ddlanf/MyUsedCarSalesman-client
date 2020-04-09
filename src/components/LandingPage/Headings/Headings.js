@@ -3,10 +3,33 @@ import './Headings.css'
 
 export default class Headings extends Component {
 
+    //This is just for demo purpose only
+    state = { clicked : false }
+
+    showDemo = () =>{
+        this.setState({ clicked: true})
+    }
+    //ends here
 
     render() {
         return (
             <>
+                {/*This is for demo purpose only*/
+                    <div className="demo">
+                        {this.state.clicked ? '' : <h1 onClick={this.showDemo} >Click here for instruction</h1>}
+                        {this.state.clicked ? 
+                        <div>
+                        <h2>This is a demo</h2>
+                        <p>To use the app, there are several different options</p>
+                        <ol>
+                            <li>Log in with with credentials <span className="demo-break">username: user1 <span className="demo-break"></span>password: user1_password</span></li>
+                            <li>For admin login use <span className="demo-break"> admin name: admin <span className="demo-break"></span> password: admin_password</span></li>
+                            <li>Register a new account</li>
+                            <li>Click on "get started" to view posts without logging in</li>
+                        </ol>
+                        </div>: ''}
+                    </div>}
+
                <section>
                     <div className="heading-box">
                         <h1 className="header-main">

@@ -45,9 +45,7 @@
     margin-bottom: 5%;
     margin-top: 0;
     width: 70%;
-    height: 5vw;
-    max-height: 45px;
-    font-size: 4vw;
+    font-size: 4.5vw;
 }
 
 .register-label{
@@ -66,6 +64,7 @@
     border-radius: 10%;
     border: #999090 solid 1px;
     background-color: white;
+    cursor: pointer;
 }
 
 .register-submit:hover{

@@ -10,7 +10,7 @@
   .view-posts-car-name{
     text-align: center;
     width: 100%;
-    font-size: 3vw;
+    font-size: 3.5vw;
     margin-bottom: 3%;
     font-family: 'Merriweather Sans', sans-serif;
     font-weight: bold;
@@ -41,7 +41,7 @@
   }
 
   ul .view-posts-car-location{
-    font-size: 2vw;
+    font-size: 3vw;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
@@ -51,12 +51,12 @@
   }
 
   ul .view-posts-car-price{
-    font-size: 4.5vw;
-    margin: 3%;
+    font-size: 5vw;
+    margin: 5%;
   }
 
   ul .view-posts-car-commission{
-    font-size: 3.5vw;
+    font-size: 4vw;
     padding-left: 5%;
     padding-right: 5%;
     margin: 1%;

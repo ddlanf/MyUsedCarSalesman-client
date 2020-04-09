@@ -59,6 +59,7 @@ export class PostProvider extends Component {
 
   clearPosts = () => {
     this.setPosts([])
+    this.setPosts({})
     this.setImages([])
   }
 

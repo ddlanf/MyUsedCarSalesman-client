@@ -8,7 +8,7 @@ Array [
     onClick={[Function]}
   >
     <button
-      className="create-post-button"
+      className="view-my-posts-create-post-button"
     >
       Create Post
     </button>

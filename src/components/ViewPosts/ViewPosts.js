@@ -30,7 +30,7 @@ export default class ViewPosts extends Component {
                         className="view-posts-link"
                         to="./make-post"
                         >
-                      <button className="create-post-button"> 
+                      <button className="view-posts-create-post-button"> 
                         Create Post
                       </button>
                 </Link>
@@ -39,7 +39,7 @@ export default class ViewPosts extends Component {
                         className="view-posts-link"
                         to="./login"
                         >
-                      <button className="create-post-button"> 
+                      <button className="view-posts-create-post-button"> 
                         Create Post
                       </button>
                 </Link>}

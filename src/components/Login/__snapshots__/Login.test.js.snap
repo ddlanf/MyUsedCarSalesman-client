@@ -41,10 +41,12 @@ exports[`Login component renders the UI as expected 1`] = `
       onChange={[Function]}
       type="password"
     />
-    <input
+    <button
       className="login-submit"
       type="submit"
-    />
+    >
+      Submit
+    </button>
   </form>
   <h3
     className="login-register-heading"

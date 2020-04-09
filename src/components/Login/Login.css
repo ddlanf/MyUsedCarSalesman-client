@@ -46,9 +46,7 @@
     margin-bottom: 5%;
     margin-top: 0;
     width: 60%;
-    height: 5.5vw;
-    max-height: 45px;
-    font-size: 3.5vw;
+    font-size: 4.5vw;
 }
   
 .login-submit{
@@ -61,6 +59,7 @@
     border-radius: 10%;
     border: #999090 solid 1px;
     background-color: white;
+    cursor: pointer;
 }
 
 .login-submit:hover{

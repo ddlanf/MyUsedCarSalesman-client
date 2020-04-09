@@ -83,7 +83,7 @@ export default class Login extends Component {
                             className="login-input"
                             name="password"
                             onChange={this.handleInputChange}/>
-                        <input type="submit" className="login-submit"></input>
+                        <button type="submit" className="login-submit">Submit</button>
                     </form>
                     <h3 className="login-register-heading">
                         New to MyUsedCarSalesman?

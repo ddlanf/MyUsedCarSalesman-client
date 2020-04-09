@@ -28,7 +28,7 @@ export default class ViewMyPosts extends Component {
                     className="view-my-posts-link"
                     to="./make-post"
                     >
-                    <button className="create-post-button"> 
+                    <button className="view-my-posts-create-post-button"> 
                         Create Post
                     </button>
                 </Link>

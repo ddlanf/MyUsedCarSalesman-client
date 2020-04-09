@@ -79,10 +79,12 @@ exports[`Register component renders the UI as expected 1`] = `
       type="text"
     />
     
-    <input
+    <button
       className="register-submit"
       type="submit"
-    />
+    >
+      Submit
+    </button>
   </form>
   <h3
     className="register-login-heading"

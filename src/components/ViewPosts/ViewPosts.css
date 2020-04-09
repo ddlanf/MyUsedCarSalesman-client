@@ -19,45 +19,40 @@
     align-content: space-around;
     flex-wrap: wrap;
   }
-
-  .view-posts-create-post{
-    text-align: center;
-    margin-top: 10%;
-  }
   
-  .create-post-button{
+  
+  .view-posts-create-post-button{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 20%;
-    min-width: 100px;
     margin-top: 30px;
-    height: 10vw;
-    min-height: 50px;
     font-size: 4vw;
     margin-bottom: 8%;
     background-color: rgba(237, 247, 102, 0.952);
     border-radius: 10%;
     border: 1px solid #3c484d;
     font-weight: bold;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
   }
 
-  .create-post-button:hover{
+  .view-posts-create-post-button:hover{
     background-color: #996060;
     transition: 0.5s;
+    cursor: pointer;
   }
 
-
-
-  
 @media screen and (min-width: 1000px) {
     .view-posts-post-box{
         margin-top: 6%;
     }
 
-    .create-post-button{
-      font-size: 30px;
-      height: 100px;
-      width: 200px; 
+    .view-posts-create-post-button{
+      font-size: 2vw;
+      padding-top: 1%;
+      padding-left: 2%;
+      padding-bottom: 1%;
     }
 }

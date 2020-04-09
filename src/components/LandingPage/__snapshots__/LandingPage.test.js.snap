@@ -32,6 +32,16 @@ exports[`LandingPage component renders the UI as expected 1`] = `
       src="yellowcar.png"
     />
   </div>
+  <div
+    className="demo"
+  >
+    <h1
+      onClick={[Function]}
+    >
+      Click here for instruction
+    </h1>
+    
+  </div>
   <section>
     <div
       className="heading-box"
@@ -153,10 +163,12 @@ exports[`LandingPage component renders the UI as expected 1`] = `
           onChange={[Function]}
           type="password"
         />
-        <input
+        <button
           className="mini-login-submit"
           type="submit"
-        />
+        >
+          Submit
+        </button>
       </form>
       <p
         className="mini-login-register"
@@ -205,7 +217,6 @@ exports[`LandingPage component renders the UI as expected 1`] = `
         <a
           className="portfolio-link"
           href="https://ddlanf.github.io/Portfolio"
-          rel="noopener noreferrer"
           target="_blank"
         >
           Portfolio
@@ -216,38 +227,74 @@ exports[`LandingPage component renders the UI as expected 1`] = `
       >
         <a
           href="https://github.com/ddlanf"
+          target="_blank"
         >
           <img
             alt="github"
             className="github"
-            rel="noopener noreferrer"
             src="github.png"
-            target="_blank"
           />
         </a>
         <a
           href="https://www.linkedin.com/in/daniel-laufenberg/"
+          target="_blank"
         >
           <img
             alt="linkedIn"
             className="linkedIn"
-            rel="noopener noreferrer"
             src="linkedIn.png"
-            target="_blank"
           />
         </a>
       </div>
     </div>
   </section>
-  <div
-    className="demo"
+  <section
+    className="auth-boxes mobile"
   >
-    <h1
-      onClick={[Function]}
+    <div
+      className="additional-info-mobile"
     >
-      Click here for instruction
-    </h1>
-    
-  </div>
+      <p>
+        MyUsedCarSalesman
+      </p>
+      <p>
+        All rights reserved
+      </p>
+      <p>
+        Created on 04/01/2020
+      </p>
+      <p>
+        By Daniel Laufenberg
+      </p>
+      <p>
+        <a
+          className="portfolio-link"
+          href="https://ddlanf.github.io/Portfolio"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Portfolio
+        </a>
+      </p>
+      <div
+        className="image-link-container-mobile"
+      >
+        <a
+          className="auth-box-mobile-link"
+          href="https://github.com/ddlanf"
+          target="_blank"
+        >
+          Github
+        </a>
+        <a
+          className="auth-box-mobile-link"
+          href="https://www.linkedin.com/in/daniel-laufenberg"
+          target="_blank"
+        >
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
 </div>
 `;
