@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 
+//This allows the page to scroll to the top when components mount
 class ScrollToTop extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
