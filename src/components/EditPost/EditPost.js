@@ -42,6 +42,7 @@ class EditPost extends Component {
             price, city, state,
             other_terms_and_conditions, image } = this.state
      
+        //Server only accepts the data called "location", so form it here by combining city and state
         let location = ''
 
         if(city || state){
@@ -125,6 +126,7 @@ class EditPost extends Component {
 
         PostApiService.getPost(postId)
             .then(post =>{
+              //This adds the default values in the input fields
                post.city = post.location.slice(0, post.location.indexOf(','))
                post.state = post.location.slice(post.location.indexOf(',') + 2, post.location.length)
                this.setState({ prevPost: post })

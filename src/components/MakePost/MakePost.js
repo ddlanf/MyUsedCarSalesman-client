@@ -50,6 +50,7 @@ export default class MakePost extends Component {
             validPost = false
         }
 
+        //Server only accepts the data called "location", so form it here by combining city and state
         const location = city.trim() + ', ' + state.trim()
 
         const newPost = { make, model, year, 
