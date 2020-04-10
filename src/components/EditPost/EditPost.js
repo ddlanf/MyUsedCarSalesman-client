@@ -64,7 +64,7 @@ class EditPost extends Component {
                 updatedPost[key] = tempPost[key]
             }
         }
-        console.log(updatedPost)
+  
         const { history } = this.props
         const { postId } = this.props.match.params
 

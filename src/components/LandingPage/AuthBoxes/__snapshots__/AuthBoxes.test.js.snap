@@ -94,6 +94,7 @@ Array [
         <a
           className="portfolio-link"
           href="https://ddlanf.github.io/Portfolio"
+          rel="noopener noreferrer"
           target="_blank"
         >
           Portfolio
@@ -104,6 +105,7 @@ Array [
       >
         <a
           href="https://github.com/ddlanf"
+          rel="noopener noreferrer"
           target="_blank"
         >
           <img
@@ -114,6 +116,7 @@ Array [
         </a>
         <a
           href="https://www.linkedin.com/in/daniel-laufenberg/"
+          rel="noopener noreferrer"
           target="_blank"
         >
           <img
@@ -159,6 +162,7 @@ Array [
         <a
           className="auth-box-mobile-link"
           href="https://github.com/ddlanf"
+          rel="noopener noreferrer"
           target="_blank"
         >
           Github
@@ -166,6 +170,7 @@ Array [
         <a
           className="auth-box-mobile-link"
           href="https://www.linkedin.com/in/daniel-laufenberg"
+          rel="noopener noreferrer"
           target="_blank"
         >
           LinkedIn

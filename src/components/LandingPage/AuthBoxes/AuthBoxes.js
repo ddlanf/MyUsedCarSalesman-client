@@ -91,12 +91,16 @@ export default class AuthBoxes extends Component {
                         <p>All rights reserved</p>
                         <p>Created on 04/01/2020</p>
                         <p>By Daniel Laufenberg</p>
-                        <p ><a target="_blank" className="portfolio-link" href="https://ddlanf.github.io/Portfolio">Portfolio</a></p>
+                        <p >
+                            <a target="_blank" rel="noopener noreferrer" className="portfolio-link" href="https://ddlanf.github.io/Portfolio">
+                             Portfolio
+                            </a>
+                        </p>
                         <div className="image-link-container"> 
-                            <a target="_blank" href="https://github.com/ddlanf">
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/ddlanf">
                                 <img className="github" alt="github" src={require('../../../Utils/myusecarsalesman_pics/github.png')} />
                             </a>
-                            <a target="_blank" href="https://www.linkedin.com/in/daniel-laufenberg/">
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/daniel-laufenberg/">
                                 <img className="linkedIn" alt="linkedIn" src={require('../../../Utils/myusecarsalesman_pics/linkedIn.png')} />
                             </a> 
                          </div>        
@@ -110,8 +114,8 @@ export default class AuthBoxes extends Component {
                         <p>By Daniel Laufenberg</p>
                         <p ><a target="_blank" rel="noopener noreferrer" className="portfolio-link" href="https://ddlanf.github.io/Portfolio">Portfolio</a></p>
                         <div className="image-link-container-mobile"> 
-                            <a  target="_blank" className="auth-box-mobile-link" href="https://github.com/ddlanf">Github</a>
-                            <a  target="_blank" className="auth-box-mobile-link" href="https://www.linkedin.com/in/daniel-laufenberg">LinkedIn</a>
+                            <a  target="_blank" rel="noopener noreferrer" className="auth-box-mobile-link" href="https://github.com/ddlanf">Github</a>
+                            <a  target="_blank" rel="noopener noreferrer" className="auth-box-mobile-link" href="https://www.linkedin.com/in/daniel-laufenberg">LinkedIn</a>
                         </div>        
                     </div>  
                 </section>

@@ -12,7 +12,7 @@ class ViewPost extends Component {
     static contextType = PostContext
     constructor(props){
         super(props)
-        this.state = { clicked : false, email: ''}
+        this.state = { clicked : false, email: '', dataLoaded: false}
     }
    
     
@@ -30,16 +30,19 @@ class ViewPost extends Component {
     }
 
     componentDidMount(){
+        
         const { postId } = this.props.match.params;
         this.context.clearError()
         PostApiService.getPost(postId)
             .then(post =>{ 
                 this.context.setPost(post)
+                ImageApiService.getImage(postId)
+                    .then(images =>{
+                        this.context.setImages(images)
+                        this.setState({ dataLoaded: true })
+                    })
+                    .catch(this.context.setError)
             })
-            .catch(this.context.setError)
-
-        ImageApiService.getImage(postId)
-            .then(images => this.context.setImages(images))
             .catch(this.context.setError)
     }
 
@@ -53,7 +56,7 @@ class ViewPost extends Component {
        
         return (
             <>
-                <section className="view-post-box">
+                <section className="view-post-box" style={{opacity: this.state.dataLoaded ? '1' : '0'}}>
                     <div className="view-post-desk-top-view-box">
                         <h1 className="view-post-carInfo-name"> {carInfo.year} {carInfo.make} {carInfo.model}</h1>
                         <h2 className="view-post-carInfo-price">${carInfo.price}</h2>

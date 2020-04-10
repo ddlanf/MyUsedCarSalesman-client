@@ -260,6 +260,7 @@ exports[`App component renders the UI as expected 1`] = `
             <a
               className="portfolio-link"
               href="https://ddlanf.github.io/Portfolio"
+              rel="noopener noreferrer"
               target="_blank"
             >
               Portfolio
@@ -270,6 +271,7 @@ exports[`App component renders the UI as expected 1`] = `
           >
             <a
               href="https://github.com/ddlanf"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <img
@@ -280,6 +282,7 @@ exports[`App component renders the UI as expected 1`] = `
             </a>
             <a
               href="https://www.linkedin.com/in/daniel-laufenberg/"
+              rel="noopener noreferrer"
               target="_blank"
             >
               <img
@@ -325,6 +328,7 @@ exports[`App component renders the UI as expected 1`] = `
             <a
               className="auth-box-mobile-link"
               href="https://github.com/ddlanf"
+              rel="noopener noreferrer"
               target="_blank"
             >
               Github
@@ -332,6 +336,7 @@ exports[`App component renders the UI as expected 1`] = `
             <a
               className="auth-box-mobile-link"
               href="https://www.linkedin.com/in/daniel-laufenberg"
+              rel="noopener noreferrer"
               target="_blank"
             >
               LinkedIn

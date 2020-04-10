@@ -7,7 +7,7 @@ Website Link: [https://myusedcarsalesman.now.sh](https://myusedcarsalesman.now.s
 ![Screenshot2](/src/Utils/myusecarsalesman_pics/post.png)
  
 ## Core Features
-This serves the client side of the Myusedcarsalesman. 
+This serves the client side of the Myusedcarsalesman app. 
 The pages this app provides include 
  * Landing Page - Landing page for Myusedcarsalesman app
  * Login - Login page for all registered users

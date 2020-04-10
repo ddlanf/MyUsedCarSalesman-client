@@ -14,7 +14,6 @@ export default class MyPosts extends Component {
         let cloneArray = this.state.clicked
         cloneArray.push(id)
         this.setState({ clicked : cloneArray })
-        console.log(cloneArray)
     }
 
     deletePost = (postId) => {
