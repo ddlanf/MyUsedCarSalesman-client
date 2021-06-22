@@ -31,3 +31,4 @@ Running the App locally requires ones to clone [myusedcarsalesman-api-auth](http
 2. Configure the CORS setting in "myusedcarsalesman-api-auth" to allow the localhost to send requests. This can be done simply adding app.use(cors()) in App.js file or chaging the value of CLIENT_ORIGIN in config.js  
 3. Run both client and server with "npm start". "npm run dev" can also be used in "myusedcarsalesman-api-auth"
  
+<!-- Just adding a random comment -->
