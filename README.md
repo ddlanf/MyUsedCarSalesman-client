@@ -32,3 +32,4 @@ Running the App locally requires ones to clone [myusedcarsalesman-api-auth](http
 3. Run both client and server with "npm start". "npm run dev" can also be used in "myusedcarsalesman-api-auth"
  
 <!-- Just adding a random comment --><!-- Just adding a random comment --><!-- Just adding a random comment --><!-- Just adding another harmless comment -->
+<!-- Just adding another harmless comment -->
